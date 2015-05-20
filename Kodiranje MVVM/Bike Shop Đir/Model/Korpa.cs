@@ -58,8 +58,20 @@ namespace Bike_Shop_Đir.Model
         { //neki add u bazu
         }
 
-        void prikaziSadrzajKorpe
+    /*    void prikaziSadrzajKorpe
         { // ???
+        }
+     
+     */
+
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected void OnPropertyChanged(string propertyName)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
         }
 
     }

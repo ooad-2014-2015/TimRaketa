@@ -37,11 +37,11 @@ namespace Bike_Shop_Đir.Model
 
         private TipZaposlenika tipZaposlenika;
 
-        public TipZaposlenika TipZaposlenika
+       /* public TipZaposlenika TipZaposlenika
         {
             get { return tipZaposlenika; }
             set { tipZaposlenika = value; }
-        }
+        }*/
 
 
         public Zaposlenik()

@@ -1,0 +1,20 @@
+﻿<Window x:Class="Bike_Shop_Đir.View.FormaGlavnaView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Bike Shop Đir" Height="500" Width="900">
+    <Grid Margin="0,0,0,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="250"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="450"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Button Content="Registruj se!" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="450" Height="250"/>
+        <Button Content="Odaberi bicilo" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" Height="250" VerticalAlignment="Top" Width="450" Margin="0,0,-10,0"/>
+        <Button Content="Odaberi turu" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" Height="250" VerticalAlignment="Top" Width="450" Margin="0,0,-10,0"/>
+        <Button Content="Naruči se za servis" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" Height="250" VerticalAlignment="Top" Width="450" Margin="0,0,-10,0"/>
+
+    </Grid>
+</Window>

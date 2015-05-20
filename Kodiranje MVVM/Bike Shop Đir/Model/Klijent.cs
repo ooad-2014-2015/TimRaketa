@@ -49,6 +49,15 @@ namespace Bike_Shop_Đir.Model
             this.brojKartice = noviBroj;
         }
 
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected void OnPropertyChanged(string propertyName)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
+
 
 
 

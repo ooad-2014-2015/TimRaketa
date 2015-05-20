@@ -27,11 +27,11 @@ namespace Bike_Shop_Đir.Model
 
         }
 
-        void prikaziBicikla(TipBicikla tip)
+        /*void prikaziBicikla(TipBicikla tip)
         {
             foreach (BicikloPredefinisano b in biciklaUPonudi)
                 if (b.tipBicikla == tip) return; //...
-        }
+        }*/
 
 
     }

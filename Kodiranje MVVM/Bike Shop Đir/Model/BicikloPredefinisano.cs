@@ -18,7 +18,7 @@ namespace Bike_Shop_Đir.Model
 
         }
 
-        float izracunajCijenu()
+        public override float izracunajCijenu()
         {
             return cijena;
         }

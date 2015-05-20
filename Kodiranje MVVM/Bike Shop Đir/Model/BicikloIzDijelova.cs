@@ -15,12 +15,13 @@ namespace Bike_Shop_Đir.Model
 
         }
 
-        public override void izracunajCijenu()
+        public override float izracunajCijenu()
         {
             foreach (DioBicikla d in listaDijelova)
             {
-                this.Cijena += d.cijenaDijela;
+                this.CijenaUsluge += d.cijenaDijela;
             }
+            return this.CijenaUsluge;
         }
     }
 }
