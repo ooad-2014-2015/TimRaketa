@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="f09c0cbcb8b94038b9eea90b01ecbdb6" Name="Diagram1">
+      <Diagram DiagramId="f09c0cbcb8b94038b9eea90b01ecbdb6" Name="Diagram1" ZoomLevel="74">
         <EntityTypeShape EntityType="BikeShopGirModel.KATALOG_BICIKALA" Width="1.5" PointX="8" PointY="7.875" IsExpanded="true" />
         <EntityTypeShape EntityType="BikeShopGirModel.KATALOG_DIJELOVA" Width="1.5" PointX="11" PointY="1.875" IsExpanded="true" />
         <EntityTypeShape EntityType="BikeShopGirModel.KATALOG_TURA" Width="1.5" PointX="3" PointY="3.75" IsExpanded="true" />
