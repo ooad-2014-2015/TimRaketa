@@ -120,9 +120,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="slika.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="View\slika.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
