@@ -1,0 +1,17 @@
+﻿<Window x:Class="Bike_Shop_Đir.View.FormaRegistracijaILoginView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="FormaRegistracijaILoginView" Height="352" Width="802">
+    <Grid Margin="1,1,1,1">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="367*"/>
+            <ColumnDefinition Width="366*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Login sa vec postojećim podacima" HorizontalAlignment="Left" Height="35" Margin="51,25,0,0" VerticalAlignment="Top" Width="315" FontSize="18" FontWeight="Bold" BorderThickness="0">
+            <Label.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HighlightColorKey}}"/>
+            </Label.Foreground>
+        </Label>
+
+    </Grid>
+</Window>
