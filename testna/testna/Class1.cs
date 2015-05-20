@@ -13,7 +13,7 @@ namespace testna
         public int dva { get; set; }
 
 
-
+        public int nestoNovo { get; set; }
         public string promjenaHEHE { get; set;}
 
         
