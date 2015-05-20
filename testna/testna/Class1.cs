@@ -12,6 +12,10 @@ namespace testna
         public int jedan { get; set; }
         public int dva { get; set; }
 
+
+
+        public string promjenaHEHE { get; set;}
+
         
     }
 }
