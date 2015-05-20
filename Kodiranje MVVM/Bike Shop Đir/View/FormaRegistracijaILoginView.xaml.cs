@@ -10,17 +10,16 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Bike_Shop_Đir
+namespace Bike_Shop_Đir.View
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for FormaRegistracijaILoginView.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class FormaRegistracijaILoginView : Window
     {
-        public MainWindow()
+        public FormaRegistracijaILoginView()
         {
             InitializeComponent();
         }
