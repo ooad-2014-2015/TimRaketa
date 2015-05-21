@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Bike_Shop_Đir.ViewModel;
 
 namespace Bike_Shop_Đir.View
 {
@@ -22,6 +23,7 @@ namespace Bike_Shop_Đir.View
         public FormaRegistracijaILoginView()
         {
             InitializeComponent();
+            DataContext = new RegistracijaViewModel();
         }
     }
 }

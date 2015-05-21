@@ -1,19 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Bike_Shop_Đir.Model
 {
-    class Osoba
+    class Osoba : INotifyPropertyChanged
     {
         private string ime;
 
         public string Ime
         {
             get { return ime; }
-            set { ime = value; }
+            set { ime = value; OnPropertyChanged("Ime"); }
         }
 
         private string prezime;
@@ -21,7 +22,7 @@ namespace Bike_Shop_Đir.Model
         public string Prezime
         {
             get { return prezime; }
-            set { prezime = value; }
+            set { prezime = value; OnPropertyChanged("Prezime");  }
         }
 
         private DateTime datumRodjenja;
@@ -29,7 +30,7 @@ namespace Bike_Shop_Đir.Model
         public DateTime DatumRodjenja
         {
             get { return datumRodjenja; }
-            set { datumRodjenja = value; }
+            set { datumRodjenja = value; OnPropertyChanged("DatumRodjenja"); }
         }
 
         private string adresaStanovanja;
@@ -37,7 +38,7 @@ namespace Bike_Shop_Đir.Model
         public string AdresaStanovanja
         {
             get { return adresaStanovanja; }
-            set { adresaStanovanja = value; }
+            set { adresaStanovanja = value; OnPropertyChanged("Adresa") }
         }
 
 
@@ -49,5 +50,16 @@ namespace Bike_Shop_Đir.Model
 
 
 
+
+
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected void OnPropertyChanged(string propertyName)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
     }
 }
