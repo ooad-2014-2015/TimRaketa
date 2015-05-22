@@ -10,14 +10,15 @@ using Bike_Shop_Đir.View;
 
 namespace Bike_Shop_Đir.ViewModel
 {
-    class RegistracijaViewModel : INotifyPropertyChanged
+    internal class RegistracijaViewModel : INotifyPropertyChanged
     {
-        private GlavnaFormaViewModel parent;
-        public GlavnaFormaViewModel Parent
+ //       private GlavnaFormaViewModel parent;
+ /*       public GlavnaFormaViewModel Parent
         {
             get { return parent; }
             set { parent = value; }
         }
+  */
 
         public ICommand Registracija { get; set; }
 
@@ -28,12 +29,15 @@ namespace Bike_Shop_Đir.ViewModel
             set { noviKlijent = value; }
         }
 
+        public ICommand Login { get; set; }
+
+
 
          
         public RegistracijaViewModel()
         {
-
             Registracija = new RelayCommand(registracijaKlik);
+            Login = new RelayCommand(loginKlik);
             
         }
 
@@ -41,6 +45,21 @@ namespace Bike_Shop_Đir.ViewModel
         public void registracijaKlik (object parameter)
         {
             NoviKlijent = new Klijent();
+
+        }
+
+        public void loginKlik(object parameter)
+        {
+            NoviKlijent = new Klijent();
+            if (!NoviKlijent.provjeriPostojanje())
+            {
+                NoviKlijent = null;
+                //prijava greske na labeli - nemoguce saznati kako -.-
+            }
+            else
+            {
+                
+
 
         }
 

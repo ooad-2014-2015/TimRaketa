@@ -1,4 +1,5 @@
-﻿using Bike_Shop_Đir.View;
+﻿using Bike_Shop_Đir.Model;
+using Bike_Shop_Đir.View;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,11 +27,14 @@ namespace Bike_Shop_Đir.ViewModel
           get { return dijeteRegistracijaViewModel; }
           set { dijeteRegistracijaViewModel = value; }
         }
-        
-        
-        
+
+        public static Klijent prijavljeni { get; set; }
+
+
+               
         public GlavnaFormaViewModel()
         {
+            prijavljeni = null;
             RegistracijaILogovanje = new RelayCommand(registracijaILogovanjeKlik);
             DijeteRegistracijaViewModel = new RegistracijaViewModel(this);
         }

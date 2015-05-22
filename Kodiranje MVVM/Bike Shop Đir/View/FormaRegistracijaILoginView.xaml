@@ -29,7 +29,7 @@
             </Label.Foreground>
         </Label>
         <TextBox HorizontalAlignment="Left" Height="26" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" Margin="176,133,0,0" FontSize="18"/>
-        <Button Content="Prijavi se" HorizontalAlignment="Left" Margin="122,302,0,0" VerticalAlignment="Top" Width="124" Height="34" FontSize="18" FontWeight="Bold">
+        <Button Content="Prijavi se" HorizontalAlignment="Left" Margin="122,302,0,0" VerticalAlignment="Top" Width="124" Height="34" FontSize="18" FontWeight="Bold" Command="{Binding Path= Login}">
             <Button.Foreground>
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.MenuHighlightColorKey}}"/>
             </Button.Foreground>
@@ -90,6 +90,7 @@
         <TextBox Text="{Binding Path=Klijent.Prezime,ValidatesOnDataErrors=True,NotifyOnValidationError=True,UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" x:Name="PrezimeTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="26" Margin="194,175,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="183" FontSize="16"/>
         <TextBox Text="{Binding Path=Klijent.Adresa,ValidatesOnDataErrors=True,NotifyOnValidationError=True,UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Grid.Column="1" HorizontalAlignment="Left" Height="26" Margin="194,253,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="183" FontSize="16"/>
         <DatePicker SelectedDate="{Binding Path=Klijent.DatumRodjenja,ValidatesOnDataErrors=True,NotifyOnValidationError=True,UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Grid.Column="1" HorizontalAlignment="Left" Margin="194,213,0,0" VerticalAlignment="Top" Width="183" FirstDayOfWeek="Monday" IsDropDownOpen="True" IsTodayHighlighted="False"/>
+        <Label x:Name="labelaLogin" Content="" HorizontalAlignment="Left" Height="34" Margin="76,245,0,0" VerticalAlignment="Top" Width="222"/>
 
     </Grid>
 </Window>

@@ -50,6 +50,13 @@ namespace Bike_Shop_Đir.Model
         }
 
 
+        public bool provjeriPostojanje()
+        {
+            //provjeriti u bazi da li postoji korisnik, preko "this.username" ;
+            return true;
+        }
+
+
 
 
 
