@@ -21,6 +21,15 @@ namespace Bike_Shop_Đir.ViewModel
             set { formaRegistracija = value; }
         }
 
+        private Klijent noviKlijent;
+
+        public Klijent NoviKlijent
+        {
+            get { return noviKlijent; }
+            set { noviKlijent = value; }
+        }
+
+
         RegistracijaViewModel dijeteRegistracijaViewModel;
         public RegistracijaViewModel DijeteRegistracijaViewModel
         {
