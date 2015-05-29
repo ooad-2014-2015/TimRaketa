@@ -11,22 +11,34 @@
             <ColumnDefinition Width="450"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Button Content="Registruj se / Prijavi se" Name="dugmeLog" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="420" Height="230" Command="{Binding Path= RegistracijaILogovanje}" Margin="10,10,0,0" FontSize="20" BorderBrush="{x:Null}" Background="{x:Null}" FontFamily="Ravie" FontWeight="Bold" >
+        <Button Content="Registruj se / Prijavi se" Name="dugmeLog" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="420" Height="230" Command="{Binding Path= RegistracijaILogovanje}" Margin="10,10,0,0" FontSize="20" BorderBrush="{x:Null}" FontFamily="Ravie" FontWeight="Bold" >
+            <Button.Background>
+                <ImageBrush ImageSource="jefe.png" Stretch="Uniform"/>
+            </Button.Background>
             <Button.Foreground>
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.MenuHighlightColorKey}}"/>
             </Button.Foreground>
         </Button>
-        <Button Content="Odaberi bicilo" Name="dugmeBiciklo" Grid.Row="0" HorizontalAlignment="Left" Height="230" VerticalAlignment="Top" Width="420" Margin="10,10,0,0" Grid.Column="1" FontSize="20" BorderBrush="{x:Null}" Background="{x:Null}" FontFamily="Ravie" FontWeight="Bold">
+        <Button Content="Odaberi bicilo" Name="dugmeBiciklo" Grid.Row="0" HorizontalAlignment="Left" Height="230" VerticalAlignment="Top" Width="420" Margin="10,10,0,0" Grid.Column="1" FontSize="20" BorderBrush="{x:Null}" FontFamily="Ravie" FontWeight="Bold" Click="dugmeBiciklo_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="pospok.jpg" Stretch="Uniform"/>
+            </Button.Background>
+            <Button.Foreground>
+                <SolidColorBrush Color="#FF3399FF"/>
+            </Button.Foreground>
+        </Button>
+        <Button Content="Odaberi turu" Name="dugmeTura" Grid.Column="0" HorizontalAlignment="Left" Height="230" VerticalAlignment="Top" Width="420" Margin="10,10,0,0" Grid.Row="1" FontSize="20" BorderBrush="{x:Null}" FontFamily="Ravie" FontWeight="Bold">
+            <Button.Background>
+                <ImageBrush ImageSource="black-and-white-mountain-hi.png"/>
+            </Button.Background>
             <Button.Foreground>
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.MenuHighlightColorKey}}"/>
             </Button.Foreground>
         </Button>
-        <Button Content="Odaberi turu" Name="dugmeTura" Grid.Column="0" HorizontalAlignment="Left" Height="230" VerticalAlignment="Top" Width="420" Margin="10,10,0,0" Grid.Row="1" FontSize="20" BorderBrush="{x:Null}" Background="{x:Null}" FontFamily="Ravie" FontWeight="Bold">
-            <Button.Foreground>
-                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.MenuHighlightColorKey}}"/>
-            </Button.Foreground>
-        </Button>
-        <Button Content="Naruči se za servis" Name="dugmeServis" HorizontalAlignment="Left" Height="230" VerticalAlignment="Top" Width="420" Grid.Column="1" Grid.Row="1" Margin="10,10,0,0" FontSize="20" BorderBrush="{x:Null}" Background="{x:Null}" FontFamily="Ravie" FontWeight="Bold">
+        <Button Content="Naruči se za servis" Name="dugmeServis" HorizontalAlignment="Left" Height="230" VerticalAlignment="Top" Width="420" Grid.Column="1" Grid.Row="1" Margin="10,10,0,0" FontSize="20" BorderBrush="{x:Null}" FontFamily="Ravie" FontWeight="Bold">
+            <Button.Background>
+                <ImageBrush ImageSource="gear-outline.png" Stretch="Uniform"/>
+            </Button.Background>
             <Button.Foreground>
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.MenuHighlightColorKey}}"/>
             </Button.Foreground>

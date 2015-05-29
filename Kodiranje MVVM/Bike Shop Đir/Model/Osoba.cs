@@ -38,7 +38,7 @@ namespace Bike_Shop_Đir.Model
         public string AdresaStanovanja
         {
             get { return adresaStanovanja; }
-            set { adresaStanovanja = value; OnPropertyChanged("Adresa") }
+            set { adresaStanovanja = value; OnPropertyChanged("Adresa"); }
         }
 
 

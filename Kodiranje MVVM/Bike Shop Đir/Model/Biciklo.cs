@@ -10,9 +10,6 @@ namespace Bike_Shop_Đir.Model
     {
         public string idBicikla { get; set; }
 
-        enum TipBicikla { Brdsko, Cestovno, Downhill, Bmx, Rekreacijsko }
-        
-      //  public TipBicikla tipBicikla { get; set; }
 
 
         public abstract float izracunajCijenu();

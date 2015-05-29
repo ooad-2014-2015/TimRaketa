@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Bike_Shop_Đir.BazaTableAdapters;
 
 namespace Bike_Shop_Đir.Model
 {
@@ -19,6 +20,11 @@ namespace Bike_Shop_Đir.Model
         void dodajTuru(Tura novaTura)
         {
             tureUPonudi.Add(novaTura);
+            KATALOG_TURATableAdapter tureAdapter = new KATALOG_TURATableAdapter();
+            Baza.KATALOG_TURADataTable tabela;
+            tabela = tureAdapter.DajTure();
+            
+
         }
 
         void obrisiTuru(string idTure)

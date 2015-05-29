@@ -25,5 +25,10 @@ namespace Bike_Shop_Đir.View
             InitializeComponent();
             DataContext = new GlavnaFormaViewModel();
         }
+
+        private void dugmeBiciklo_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
