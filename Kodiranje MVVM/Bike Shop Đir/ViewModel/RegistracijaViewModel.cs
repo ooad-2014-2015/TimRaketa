@@ -12,62 +12,53 @@ namespace Bike_Shop_Đir.ViewModel
 {
     internal class RegistracijaViewModel : INotifyPropertyChanged
     {
- //       private GlavnaFormaViewModel parent;
- /*       public GlavnaFormaViewModel Parent
+       private GlavnaFormaViewModel parent;
+        public GlavnaFormaViewModel Parent
         {
             get { return parent; }
             set { parent = value; }
         }
-  */
+ 
 
         public ICommand Registracija { get; set; }
 
-        private Klijent noviKlijent;
-        public Klijent NoviKlijent
-        {
-            get { return noviKlijent; }
-            set { noviKlijent = value; }
-        }
+       
 
         public ICommand Login { get; set; }
 
 
 
          
-        public RegistracijaViewModel()
+        public RegistracijaViewModel(GlavnaFormaViewModel g)
         {
+            this.parent = g;
             Registracija = new RelayCommand(registracijaKlik);
             Login = new RelayCommand(loginKlik);
-            
+            parent.NoviKlijent = new Klijent();
         }
 
 
         public void registracijaKlik (object parameter)
         {
-            NoviKlijent = new Klijent();
+            parent.NoviKlijent.upisiUBazu();
 
         }
 
         public void loginKlik(object parameter)
         {
-            NoviKlijent = new Klijent();
-            if (!NoviKlijent.provjeriPostojanje())
+            if (!parent.NoviKlijent.provjeriPostojanje())
             {
-                NoviKlijent = null;
+                parent.NoviKlijent = null;
                 //prijava greske na labeli - nemoguce saznati kako -.-
             }
             else
             {
 
-
-
             }
         }
 
-      
-        
-        
-        
+
+
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged(string propertyName)
         {

@@ -56,7 +56,11 @@ namespace Bike_Shop_Đir.Model
             return true;
         }
 
-
+        public void upisiUBazu()
+        {
+            //validacija pa upis
+            return;
+        }
 
 
 
