@@ -13,6 +13,6 @@
                 <SolidColorBrush Color="#FFE9F0F1" Opacity="0.8"/>
             </DataGrid.Background>
         </DataGrid>
-        <Button Content="Dodaj novu" HorizontalAlignment="Left" Margin="314,264,0,0" VerticalAlignment="Top" Width="98" Height="23"/>
+        <Button x:Name="button1" Content="Dodaj novu" HorizontalAlignment="Left" Margin="314,264,0,0" VerticalAlignment="Top" Width="98" Height="23" IsManipulationEnabled="True"/>
     </Grid>
 </Window>

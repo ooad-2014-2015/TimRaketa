@@ -6,20 +6,23 @@
         <Grid.Background>
             <ImageBrush ImageSource="pospok.jpg" Stretch="Uniform"/>
         </Grid.Background>
-        <DataGrid HorizontalAlignment="Left" VerticalAlignment="Top" Height="236" Width="313" Margin="10,28,0,0"  DataContext="{Binding Path=Bicikla.BiciklaUPonudi}" ItemsSource="{Binding}" CanUserAddRows="False">
+        <DataGrid HorizontalAlignment="Left" VerticalAlignment="Top" Height="236" Width="313" Margin="32,28,0,0"  DataContext="{Binding Path=Bicikla.BiciklaUPonudi}" ItemsSource="{Binding}" CanUserAddRows="False">
             <DataGrid.Background>
                 <SolidColorBrush Color="#FFE8F3EE" Opacity="0.8"/>
             </DataGrid.Background>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Bicikl" Width="200" Binding="{Binding Path=IDBicikla}" IsReadOnly="True" />
+            </DataGrid.Columns>
         </DataGrid>
-        <Button Content="Dodaj novi" HorizontalAlignment="Left" Margin="225,269,0,0" VerticalAlignment="Top" Width="98" RenderTransformOrigin="1.198,-0.128" Height="25"/>
+        <Button x:Name="button1" Content="Dodaj novi" HorizontalAlignment="Left" Margin="225,269,0,0" VerticalAlignment="Top" Width="98" RenderTransformOrigin="1.198,-0.128" Height="25" IsManipulationEnabled="True"/>
         <Label Content="Bicikli u ponudi:" HorizontalAlignment="Left" Margin="10,2,0,0" VerticalAlignment="Top" Width="106"/>
-        <DataGrid HorizontalAlignment="Left" VerticalAlignment="Top" Height="236" Width="313" Margin="350,28,0,0" RenderTransformOrigin="0.948,0.515"  DataContext="{Binding Path=Dijelovi.DijeloviUPonudi}" ItemsSource="{Binding}" CanUserAddRows="False">
+        <DataGrid HorizontalAlignment="Left" VerticalAlignment="Top" Height="236" Width="313" Margin="350,28,0,0" RenderTransformOrigin="0.948,0.515"  DataContext="{Binding Path=Dijelovi.DijeloviUPonudi}" ItemsSource="{Binding}" CanUserAddRows="False" SelectionChanged="DataGrid_SelectionChanged">
             <DataGrid.Background>
                 <SolidColorBrush Color="#FFE8F3EE" Opacity="0.8"/>
             </DataGrid.Background>
         </DataGrid>
         <Label Content="Dijelovi u ponudi:" HorizontalAlignment="Left" Margin="350,2,0,0" VerticalAlignment="Top" Width="106"/>
-        <Button Content="Dodaj novi" HorizontalAlignment="Left" Margin="565,269,0,0" VerticalAlignment="Top" Width="98" RenderTransformOrigin="1.198,-0.128" Height="25"/>
+        <Button x:Name="button2" Content="Dodaj novi" HorizontalAlignment="Left" Margin="565,269,0,0" VerticalAlignment="Top" Width="98" RenderTransformOrigin="1.198,-0.128" Height="25" IsManipulationEnabled="True"/>
 
     </Grid>
 </Window>

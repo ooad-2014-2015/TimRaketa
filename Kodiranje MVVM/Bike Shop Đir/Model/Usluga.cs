@@ -9,7 +9,6 @@ namespace Bike_Shop_Đir.Model
     public abstract class Usluga
     {
         private float cijenaUsluge;
-
         public float CijenaUsluge
         {
             get { return cijenaUsluge; }

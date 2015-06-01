@@ -37,7 +37,7 @@ namespace Bike_Shop_Đir.Model
 
         void obrisiTuru(string idTure)
         {
-            tureUPonudi.Remove(tureUPonudi.Single(x => x.idTure == idTure));
+            tureUPonudi.Remove(tureUPonudi.Single(x => x.IDTure == idTure));
 
         }
 

@@ -9,14 +9,14 @@ using System.Threading.Tasks;
 namespace Bike_Shop_Đir.Model
 {
     // Upitno mi je jesmo li trebali razdvojiti kreditnu karticu kao zasebnu klasu...
-    public class Klijent : Osoba, INotifyPropertyChanged 
+    public class Klijent : Osoba
     {
         private string userName;
 
         public string UserName
         {
             get { return userName; }
-            set { userName = value; OnPropertyChanged("UserName"); }
+            set { userName = value;}
         }
 
         private string sifra;
@@ -24,7 +24,7 @@ namespace Bike_Shop_Đir.Model
         public string Sifra
         {
             get { return sifra; }
-            set { sifra = value; OnPropertyChanged("Sifra"); }
+            set { sifra = value; }
         }
 
         private int brojKartice;
@@ -32,7 +32,7 @@ namespace Bike_Shop_Đir.Model
         public int BrojKartice
         {
             get { return brojKartice; }
-            set { brojKartice = value; OnPropertyChanged("BrojKartice"); }
+            set { brojKartice = value; }
         }
 
         public Klijent()

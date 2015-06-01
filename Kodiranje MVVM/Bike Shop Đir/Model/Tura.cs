@@ -8,25 +8,70 @@ namespace Bike_Shop_Đir.Model
 {
     public class Tura : Usluga
     {
-        public string idTure { get; set; }
+        public enum TipTure { Gradska, Brdska, Mjesovita, Utrka }
 
-        string nazivTure { get; set; }
+        private string idTure;
+        public string IDTure
+        {
+            get { return idTure; }
+            set { idTure = value; }
+        }
 
-        float trajanje { get; set; }
+        private string nazivTure;
+        public string NazivTure
+        {
+            get { return nazivTure; }
+            set { nazivTure = value; }
+        }
 
-        float duzina { get; set; }
+        private float trajanje;
+        public float Trajanje
+        {
+            get { return trajanje; }
+            set { trajanje = value; }
+        }
 
-        enum TipTure { Gradska, Brdska, Mjesovita, Utrka }
+        private float duzina;
+        public float Duzina
+        {
+            get { return duzina; }
+            set { duzina = value; }
+        }
 
-        TipTure tipTure { get; set; }
+        private TipTure tipTure;
+        public TipTure TipTureI
+        {
+            get { return tipTure; }
+            set { tipTure = value; }
+        }
 
-        int tezina { get; set; }
+        private int tezina;
+        public int Tezina
+        {
+            get { return tezina; }
+            set { tezina = value; }
+        }
 
-        bool rentBicikla { get; set; }
+        private bool rentBicikla;
+        public bool RentBicikla
+        {
+            get { return rentBicikla; }
+            set { rentBicikla = value; }
+        }
 
-        Zaposlenik vodic { get; set; }
+        private Zaposlenik vodic;
+        public Zaposlenik Vodic
+        {
+            get { return vodic; }
+            set { vodic = value; }
+        }
 
-        List<Klijent> klijenti;
+        private List<Klijent> klijenti;
+        public List<Klijent> Klijenti
+        {
+            get { return klijenti; }
+            set { klijenti = value; }
+        }
 
         public Tura()
         {

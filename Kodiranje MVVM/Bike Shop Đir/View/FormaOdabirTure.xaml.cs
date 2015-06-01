@@ -19,8 +19,12 @@ namespace Bike_Shop_Đir.View
     /// </summary>
     public partial class FormaOdabirTure : Window
     {
-        public FormaOdabirTure()
+        public FormaOdabirTure(bool zaposlenik, bool klijent)
         {
+            if (zaposlenik)
+            {
+                button1.Visibility = System.Windows.Visibility.Visible;
+            }
             InitializeComponent();
         }
     }

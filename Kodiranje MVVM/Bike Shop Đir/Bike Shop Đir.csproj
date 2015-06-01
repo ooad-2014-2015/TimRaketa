@@ -59,15 +59,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Baza.cs">
-      <DependentUpon>Baza.xsd</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Baza.Designer.cs">
-      <DependentUpon>Baza.xsd</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <Compile Include="ViewModel\GlavnaFormaViewModel.cs" />
     <Compile Include="ViewModel\NarucivanjeServisViewModel.cs" />
     <Compile Include="ViewModel\OdabirBiciklaViewModel.cs" />
@@ -156,17 +147,6 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <None Include="Baza.xsc">
-      <DependentUpon>Baza.xsd</DependentUpon>
-    </None>
-    <None Include="Baza.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Baza.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Baza.xss">
-      <DependentUpon>Baza.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
