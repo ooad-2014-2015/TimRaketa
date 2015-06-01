@@ -3,35 +3,38 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Bike_Shop_Đir.BazaTableAdapters;
+using System.Collections.ObjectModel;
 
 namespace Bike_Shop_Đir.Model
 {
     class KatalogBicikala
     {
         int brojBicikala { get; set; }
-        List<BicikloPredefinisano> biciklaUPonudi;
+        ObservableCollection<BicikloPredefinisano> biciklaUPonudi;
 
         public KatalogBicikala()
         {
-            biciklaUPonudi = new List<BicikloPredefinisano>();
+            biciklaUPonudi = new ObservableCollection<BicikloPredefinisano>();
 
         }
 
-        void obrisiBiciklo(string idBicikla)
+        void obrisiBiciklo(int idBicikla)
         {
-            biciklaUPonudi.Remove(biciklaUPonudi.Single(x => x.idBicikla == idBicikla));
+            KATALOG_BICIKALATableAdapter adapter = new KATALOG_BICIKALATableAdapter();
+            adapter.DeleteBiciklo(idBicikla);
         }
 
-        void prikaziBicikla()
+        object prikaziBicikla()
         {
+            KATALOG_BICIKALATableAdapter adapter = new KATALOG_BICIKALATableAdapter();
+            Baza.KATALOG_BICIKALADataTable tabela;
+            tabela = adapter.DajBicikla();
+            return tabela;
 
         }
 
-        /*void prikaziBicikla(TipBicikla tip)
-        {
-            foreach (BicikloPredefinisano b in biciklaUPonudi)
-                if (b.tipBicikla == tip) return; //...
-        }*/
+       
 
 
     }

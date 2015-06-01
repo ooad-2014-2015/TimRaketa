@@ -16,7 +16,7 @@ namespace Bike_Shop_Đir.Model
            
         }
 
-
+        
         public override float izracunajCijenu()
         {
             foreach (DioBicikla d in listaDijelova)

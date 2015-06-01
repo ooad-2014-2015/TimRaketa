@@ -45,7 +45,7 @@ namespace Bike_Shop_Đir.ViewModel
         {
             prijavljeni = null;
             RegistracijaILogovanje = new RelayCommand(registracijaILogovanjeKlik);
-            DijeteRegistracijaViewModel = new RegistracijaViewModel();
+            DijeteRegistracijaViewModel = new RegistracijaViewModel(this);
         }
 
         public void registracijaILogovanjeKlik(object parametar)
