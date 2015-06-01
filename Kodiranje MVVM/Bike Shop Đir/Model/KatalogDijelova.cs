@@ -8,7 +8,7 @@ using System.Windows;
 
 namespace Bike_Shop_Đir.Model
 {
-    class KatalogDijelova
+    public class KatalogDijelova
     {
         private List<DioBicikla> dijeloviUPonudi;
         public List<DioBicikla> DijeloviUPonudi

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Bike_Shop_Đir.Model
 {
-    class DioBicikla
+    public class DioBicikla
     {
         public string idDijela { get; set; }
         string nazivProizvodjaca { get; set; }

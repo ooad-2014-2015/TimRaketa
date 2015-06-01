@@ -8,7 +8,7 @@ using Bike_Shop_Đir.View;
 
 namespace Bike_Shop_Đir.ViewModel
 {
-    class OdabirBiciklaViewModel
+    public class OdabirBiciklaViewModel
     {
         private KatalogBicikala bicikla;
         public KatalogBicikala Bicikla

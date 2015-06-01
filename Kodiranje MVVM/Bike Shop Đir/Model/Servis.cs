@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Bike_Shop_Đir.Model
 {
-    class Servis : Usluga, INotifyPropertyChanged
+    public class Servis : Usluga, INotifyPropertyChanged
     {
         public enum statusServisa { AnalizaKvara, Servisiranje, NaCekanju, Popravljen};
 

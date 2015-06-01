@@ -10,7 +10,7 @@ using Bike_Shop_Đir.View;
 
 namespace Bike_Shop_Đir.ViewModel
 {
-    class NarucivanjeServisViewModel
+    public class NarucivanjeServisViewModel
     {
         private Servis servis;
         public Servis Servis

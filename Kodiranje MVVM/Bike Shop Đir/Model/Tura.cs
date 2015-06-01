@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Bike_Shop_Đir.Model
 {
-    class Tura : Usluga
+    public class Tura : Usluga
     {
         public string idTure { get; set; }
 

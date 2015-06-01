@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Bike_Shop_Đir.Model
 {
-    class KatalogBicikala
+    public class KatalogBicikala
     {
         int brojBicikala { get; set; }
         private List<BicikloPredefinisano> biciklaUPonudi;

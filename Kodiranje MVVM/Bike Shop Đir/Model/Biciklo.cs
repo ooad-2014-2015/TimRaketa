@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Bike_Shop_Đir.Model
 {
-    abstract class Biciklo : Usluga
+    public abstract class Biciklo : Usluga
     {
         public string idBicikla { get; set; }
 

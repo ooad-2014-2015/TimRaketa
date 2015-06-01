@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Bike_Shop_Đir.Model
 {
-    class KatalogTura
+    public class KatalogTura
     {
         static int brojTura;
         private List<Tura> tureUPonudi;
