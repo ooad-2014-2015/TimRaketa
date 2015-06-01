@@ -74,10 +74,18 @@ namespace Bike_Shop_Đir.ViewModel
             get { return noviKlijent; }
             set { noviKlijent = value; }
         }
-    
+
+        private Zaposlenik zaposlenik;
+        public Zaposlenik Zaposlenik
+        {
+            get { return zaposlenik; }
+            set { zaposlenik = value; }
+        }
+        
 
         public GlavnaFormaViewModel()
         {
+            Zaposlenik = null;
             NoviKlijent = null;
             RegistracijaILogovanje = new RelayCommand(registracijaILogovanjeKlik);
             OdabirBicikla = new RelayCommand(odabirBicikla);
@@ -110,11 +118,9 @@ namespace Bike_Shop_Đir.ViewModel
 
         public void narucivanjeServis(object parametar)
         {
-            narucivanjeServisViewModel = new NarucivanjeServisViewModel();
-            formaNarucivanjeServis = new FormaNarucivanjeServis();
-            formaNarucivanjeServis.DataContext = narucivanjeServisViewModel;
-            if (narucivanjeServisViewModel.CloseAction == null)
-                narucivanjeServisViewModel.CloseAction = new Action(() => formaNarucivanjeServis.Close());
+            formaNarucivanjeServis = new FormaNarucivanjeServis(this);
+        //    if (narucivanjeServisViewModel.CloseAction == null)
+         //       narucivanjeServisViewModel.CloseAction = new Action(() => formaNarucivanjeServis.Close());
             formaNarucivanjeServis.Show();
         }
 
