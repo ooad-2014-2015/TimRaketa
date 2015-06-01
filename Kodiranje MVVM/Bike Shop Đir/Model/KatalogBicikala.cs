@@ -8,7 +8,7 @@ using System.Collections.ObjectModel;
 
 namespace Bike_Shop_Đir.Model
 {
-    class KatalogBicikala
+   public class KatalogBicikala
     {
         int brojBicikala { get; set; }
         ObservableCollection<BicikloPredefinisano> biciklaUPonudi;
@@ -31,7 +31,8 @@ namespace Bike_Shop_Đir.Model
             Baza.KATALOG_BICIKALADataTable tabela;
             tabela = adapter.DajBicikla();
             return tabela;
-
+            //ovdje mozete samo uraditi nesto tipa DataGrid nesto;
+            //                                     nesto.DataSource=prikaziBicikla(); i to bi trebalo raditi
         }
 
        
