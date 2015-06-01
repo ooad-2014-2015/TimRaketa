@@ -75,6 +75,14 @@ namespace Bike_Shop_Đir.ViewModel
             set { noviKlijent = value; }
         }
 
+        private Korpa korpa;
+        public Korpa Korpa
+        {
+            get { return korpa; }
+            set { korpa = value; OnPropertyChanged("Korpa"); }
+        }
+           
+
 
     /*    RegistracijaViewModel dijeteRegistracijaViewModel;
         public RegistracijaViewModel DijeteRegistracijaViewModel
@@ -92,6 +100,7 @@ namespace Bike_Shop_Đir.ViewModel
           //  NoviKlijent = new Klijent();
             RegistracijaILogovanje = new RelayCommand(registracijaILogovanjeKlik);
           //  DijeteRegistracijaViewModel = new RegistracijaViewModel(this);
+            korpa = new Korpa();
             OdabirBicikla = new RelayCommand(odabirBicikla);
             OdabirTure = new RelayCommand(odabirTure);
             NarucivanjeServis = new RelayCommand(narucivanjeServis);

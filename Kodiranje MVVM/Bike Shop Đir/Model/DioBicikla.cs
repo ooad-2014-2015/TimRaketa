@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Bike_Shop_Đir.BazaTableAdapters;
+//using Bike_Shop_Đir.BazaTableAdapters;
 using System.Collections.ObjectModel;
 using System.Data.Metadata.Edm;
 using System.Drawing;
@@ -37,9 +37,9 @@ namespace Bike_Shop_Đir.Model
 
         public void staviKomponentu()
         {
-            KOMPONENTETableAdapter adapter = new KOMPONENTETableAdapter();
+            /*KOMPONENTETableAdapter adapter = new KOMPONENTETableAdapter();
             byte[] slika = imageToByteArray(this.slika_komponente) ;
-            adapter.Insert(this.idDijela,slika );
+            adapter.Insert(this.idDijela,slika );*/
             
 
         }

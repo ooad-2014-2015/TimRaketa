@@ -8,11 +8,16 @@ using System.Threading.Tasks;
 
 namespace Bike_Shop_Đir.Model
 {
-    class Korpa : INotifyPropertyChanged
+    public class Korpa : INotifyPropertyChanged
     {
         private string idKorpe { get; set; }
 
-        ObservableCollection<StavkaKorpe> stavke;
+        private ObservableCollection<StavkaKorpe> stavke;
+        public ObservableCollection<StavkaKorpe> Stavke
+        {
+            get { return stavke; }
+            set { stavke = value; OnPropertyChanged("Stavke"); }
+        }
 
         private Klijent klijent { get; set; }
 
