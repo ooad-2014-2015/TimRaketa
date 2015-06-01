@@ -34,7 +34,6 @@ namespace Bike_Shop_Đir.Model
         }
 
         private string adresaStanovanja;
-
         public string AdresaStanovanja
         {
             get { return adresaStanovanja; }

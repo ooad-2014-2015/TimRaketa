@@ -23,10 +23,10 @@ namespace Bike_Shop_Đir.View
     public partial class FormaRegistracijaILoginView : Window
     {
 
-        public FormaRegistracijaILoginView()
+        public FormaRegistracijaILoginView(GlavnaFormaViewModel g)
         {
             InitializeComponent();
-            DataContext = new RegistracijaViewModel();
+            DataContext = new RegistracijaViewModel(g);
         
         }
     }

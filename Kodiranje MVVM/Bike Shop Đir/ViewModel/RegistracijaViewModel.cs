@@ -90,8 +90,9 @@ namespace Bike_Shop_Đir.ViewModel
         }
 
 
-        public RegistracijaViewModel()
+        public RegistracijaViewModel(GlavnaFormaViewModel g)
         {
+            parent = g;
             NoviKlijent = new Klijent();
             Registracija = new RelayCommand(registracijaKlik);
             Login = new RelayCommand(loginKlik);
@@ -106,7 +107,7 @@ namespace Bike_Shop_Đir.ViewModel
             PorukaGreske2 = "Uspjesno ste registrovani!";
             BojaGreske = "Zelena";
             VidljivaGreska2 = Visibility.Visible;
-
+            parent.NoviKlijent = this.NoviKlijent;
         }
 
         public void loginKlik(object parameter)
@@ -120,13 +121,13 @@ namespace Bike_Shop_Đir.ViewModel
                 PorukaGreske = "Neispravan username ili password!";
                 VidljivaGreska = Visibility.Visible;
                 BojaGreske = "Crvena";
-
             }
             else
             {
                 PorukaGreske = "Prijavljeni ste!";
                 BojaGreske = "Zelena";
                 VidljivaGreska = Visibility.Visible;
+                parent.NoviKlijent = this.NoviKlijent;
             }
         }
 

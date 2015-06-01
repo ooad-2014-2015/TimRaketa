@@ -74,43 +74,20 @@ namespace Bike_Shop_Đir.ViewModel
             get { return noviKlijent; }
             set { noviKlijent = value; }
         }
-
-        private Korpa korpa;
-        public Korpa Korpa
-        {
-            get { return korpa; }
-            set { korpa = value; OnPropertyChanged("Korpa"); }
-        }
-           
-
-
-    /*    RegistracijaViewModel dijeteRegistracijaViewModel;
-        public RegistracijaViewModel DijeteRegistracijaViewModel
-        {
-          get { return dijeteRegistracijaViewModel; }
-          set { dijeteRegistracijaViewModel = value; }
-        }*/
-
-        public static Klijent prijavljeni { get; set; }
-        
+    
 
         public GlavnaFormaViewModel()
         {
-            prijavljeni = null;
-          //  NoviKlijent = new Klijent();
+            NoviKlijent = null;
             RegistracijaILogovanje = new RelayCommand(registracijaILogovanjeKlik);
-          //  DijeteRegistracijaViewModel = new RegistracijaViewModel(this);
-            korpa = new Korpa();
             OdabirBicikla = new RelayCommand(odabirBicikla);
             OdabirTure = new RelayCommand(odabirTure);
-            NarucivanjeServis = new RelayCommand(narucivanjeServis);
-            
+            NarucivanjeServis = new RelayCommand(narucivanjeServis);    
         }
 
         public void registracijaILogovanjeKlik(object parametar)
         {
-            FormaRegistracija = new FormaRegistracijaILoginView();
-            //FormaRegistracija.DataContext = this;
+            FormaRegistracija = new FormaRegistracijaILoginView(this);
             FormaRegistracija.Visibility = Visibility.Visible;
         
         }

@@ -37,10 +37,10 @@ namespace Bike_Shop_Đir.Model
 
         public void staviKomponentu()
         {
-            /*KOMPONENTETableAdapter adapter = new KOMPONENTETableAdapter();
+         /*   KOMPONENTETableAdapter adapter = new KOMPONENTETableAdapter();
             byte[] slika = imageToByteArray(this.slika_komponente) ;
-            adapter.Insert(this.idDijela,slika );*/
-            
+            adapter.Insert(this.idDijela,slika );
+            */
 
         }
         

@@ -9,14 +9,14 @@ using System.Threading.Tasks;
 namespace Bike_Shop_Đir.Model
 {
     // Upitno mi je jesmo li trebali razdvojiti kreditnu karticu kao zasebnu klasu...
-    public class Klijent : Osoba
+    public class Klijent : Osoba, INotifyPropertyChanged 
     {
         private string userName;
 
         public string UserName
         {
             get { return userName; }
-            set { userName = value; }
+            set { userName = value; OnPropertyChanged("UserName"); }
         }
 
         private string sifra;
@@ -24,7 +24,7 @@ namespace Bike_Shop_Đir.Model
         public string Sifra
         {
             get { return sifra; }
-            set { sifra = value; }
+            set { sifra = value; OnPropertyChanged("Sifra"); }
         }
 
         private int brojKartice;
@@ -32,7 +32,7 @@ namespace Bike_Shop_Đir.Model
         public int BrojKartice
         {
             get { return brojKartice; }
-            set { brojKartice = value; }
+            set { brojKartice = value; OnPropertyChanged("BrojKartice"); }
         }
 
         public Klijent()
@@ -42,11 +42,11 @@ namespace Bike_Shop_Đir.Model
 
         void promijeniSifru(string novaSifra)
         {
-            /*KLIJENTITableAdapter adapter = new KLIJENTITableAdapter();
-            Baza.KLIJENTIDataTable tabela;
-            tabela = adapter.DajPoSifri(this.sifra);
+          //  KLIJENTITableAdapter adapter = new KLIJENTITableAdapter();
+          //  Baza.KLIJENTIDataTable tabela;
+          //  tabela = adapter.DajPoSifri(this.sifra);
             this.Sifra = novaSifra;
-            adapter.Update(tabela);*/
+          //  adapter.Update(tabela);
             
         }
 
@@ -64,10 +64,11 @@ namespace Bike_Shop_Đir.Model
 
         public void upisiUBazu()
         {
-           /* KLIJENTITableAdapter adapter = new KLIJENTITableAdapter();
-            adapter.Insert(this.Ime, this.Prezime, this.AdresaStanovanja, this.UserName, this.Sifra, Convert.ToInt32(34234));
-            return;*/
+           // KLIJENTITableAdapter adapter = new KLIJENTITableAdapter();
+          //  adapter.Insert(this.Ime, this.Prezime, this.AdresaStanovanja, this.UserName, this.Sifra, Convert.ToInt32(34234));
+            return;
         }
+
 
     }
 }
