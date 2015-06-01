@@ -31,7 +31,7 @@ namespace Bike_Shop_Đir.Model
         public int BrojKartice
         {
             get { return brojKartice; }
-            set { brojKartice = value; }
+            set { brojKartice = value; OnPropertyChanged("BrojKartice"); }
         }
 
         public Klijent()
@@ -46,7 +46,7 @@ namespace Bike_Shop_Đir.Model
 
         void promijeniBrojKartice(int noviBroj)
         {
-            this.brojKartice = noviBroj;
+            this.BrojKartice = noviBroj;
         }
 
 
@@ -62,15 +62,5 @@ namespace Bike_Shop_Đir.Model
             return;
         }
 
-
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected void OnPropertyChanged(string propertyName)
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
-        }
     }
 }

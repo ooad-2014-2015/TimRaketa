@@ -38,7 +38,7 @@
             </Button.Foreground>
         </Button>
         <TextBox Text="{Binding Klijent.Sifra,  Mode=TwoWay}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="176,193,0,0" Width="190" Height="26"/>
-        <Separator HorizontalAlignment="Left" Margin="182,175,0,159" Width="429" Grid.ColumnSpan="2" RenderTransformOrigin="0.5,0.5" BorderThickness="0,7,0,0">
+        <Separator HorizontalAlignment="Left" Margin="173,166,0,168" Width="447" Grid.ColumnSpan="2" RenderTransformOrigin="0.5,0.5" BorderThickness="0,7,0,0">
             <Separator.BorderBrush>
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.MenuHighlightColorKey}}"/>
             </Separator.BorderBrush>
@@ -92,12 +92,12 @@
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.MenuHighlightColorKey}}"/>
             </Button.Foreground>
         </Button>
-        <TextBox Text="{Binding Klijent.UserName,ValidatesOnDataErrors=True,NotifyOnValidationError=True,UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" x:Name="UsernameTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="26" Margin="194,73,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="183" FontSize="16"/>
-        <TextBox Text="{Binding Klijent.Sifra,ValidatesOnDataErrors=True,NotifyOnValidationError=True,UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" x:Name="SifraTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="26" Margin="194,107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="183" FontSize="16"/>
-        <TextBox Text="{Binding Klijent.Ime,ValidatesOnDataErrors=True,NotifyOnValidationError=True,UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" x:Name="ImeTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="26" Margin="194,141,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="183" FontSize="16"/>
-        <TextBox Text="{Binding Klijent.Prezime,ValidatesOnDataErrors=True,NotifyOnValidationError=True,UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" x:Name="PrezimeTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="26" Margin="194,175,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="183" FontSize="16"/>
-        <TextBox Text="{Binding Klijent.Adresa,ValidatesOnDataErrors=True,NotifyOnValidationError=True,UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Grid.Column="1" HorizontalAlignment="Left" Height="26" Margin="194,253,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="183" FontSize="16"/>
-        <TextBox Text="{Binding Klijent.BrojKartice, Mode=TwoWay, NotifyOnValidationError=True, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Grid.Column="1" HorizontalAlignment="Left" Height="26" Margin="194,287,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="183" FontSize="16"/>
+        <TextBox Text="{Binding NoviKlijent.UserName,ValidatesOnDataErrors=True,NotifyOnValidationError=True,UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" x:Name="UsernameTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="26" Margin="194,73,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="183" FontSize="16"/>
+        <TextBox Text="{Binding NoviKlijent.Sifra,ValidatesOnDataErrors=True,NotifyOnValidationError=True,UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" x:Name="SifraTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="26" Margin="194,107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="183" FontSize="16"/>
+        <TextBox Text="{Binding NoviKlijent.Ime,ValidatesOnDataErrors=True,NotifyOnValidationError=True,UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" x:Name="ImeTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="26" Margin="194,141,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="183" FontSize="16"/>
+        <TextBox Text="{Binding NoviKlijent.Prezime,ValidatesOnDataErrors=True,NotifyOnValidationError=True,UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" x:Name="PrezimeTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="26" Margin="194,175,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="183" FontSize="16"/>
+        <TextBox Text="{Binding NoviKlijent.Adresa,ValidatesOnDataErrors=True,NotifyOnValidationError=True,UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Grid.Column="1" HorizontalAlignment="Left" Height="26" Margin="194,253,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="183" FontSize="16"/>
+        <TextBox Text="{Binding NoviKlijent.BrojKartice, Mode=TwoWay, NotifyOnValidationError=True, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Grid.Column="1" HorizontalAlignment="Left" Height="26" Margin="194,287,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="183" FontSize="16"/>
 
         <DatePicker SelectedDate="{Binding Klijent.DatumRodjenja,ValidatesOnDataErrors=True,
             NotifyOnValidationError=True,UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" 
@@ -134,6 +134,6 @@
                 </Style>
             </TextBlock.Style>
         </TextBlock>
-        
+
     </Grid>
 </Window>
