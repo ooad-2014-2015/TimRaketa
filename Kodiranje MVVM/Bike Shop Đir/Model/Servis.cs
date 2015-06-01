@@ -23,7 +23,7 @@ namespace Bike_Shop_Đir.Model
         public string OpisProblema
         {
             get { return opisProblema; }
-            set { opisProblema = value; }
+            set { opisProblema = value; OnPropertyChanged("OpisProblema"); }
         }
 
         private statusServisa status;

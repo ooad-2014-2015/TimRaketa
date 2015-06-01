@@ -5,16 +5,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Windows;
+using System.Windows.Input;
+using System.ComponentModel;
+using System.Collections.ObjectModel;
 
 namespace Bike_Shop_Đir.Model
 {
-    public class KatalogDijelova
+    public class KatalogDijelova : INotifyPropertyChanged
     {
-        private List<DioBicikla> dijeloviUPonudi;
-        public List<DioBicikla> DijeloviUPonudi
+        private ObservableCollection<DioBicikla> dijeloviUPonudi;
+        public ObservableCollection<DioBicikla> DijeloviUPonudi
         {
             get { return dijeloviUPonudi; }
-            set { dijeloviUPonudi = value; }
+            set { dijeloviUPonudi = value; OnPropertyChanged("DijeloviUPonudi"); }
         }
          
 
@@ -22,7 +25,7 @@ namespace Bike_Shop_Đir.Model
         {
            
            // SqlConnection veza = new SqlConnection("Data Source=TOPLAP;Initial Catalog=BikeShopGir;Integrated Security=True");
-            dijeloviUPonudi = new List<DioBicikla>();
+            dijeloviUPonudi = new ObservableCollection<DioBicikla>();
         }
 
         void dodajDio(DioBicikla dio)
@@ -37,6 +40,15 @@ namespace Bike_Shop_Đir.Model
         {
 
             dijeloviUPonudi.Remove(dijeloviUPonudi.Single(x => x.idDijela == id));
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected void OnPropertyChanged(string propertyName)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
         }
     }
 }

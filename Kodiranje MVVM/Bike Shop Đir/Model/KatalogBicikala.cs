@@ -3,15 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Bike_Shop_Đir.BazaTableAdapters;
+using System.Windows.Input;
+using System.ComponentModel;
 using System.Collections.ObjectModel;
 
 namespace Bike_Shop_Đir.Model
 {
-   public class KatalogBicikala
+    public class KatalogBicikala : INotifyPropertyChanged
     {
         int brojBicikala { get; set; }
-        ObservableCollection<BicikloPredefinisano> biciklaUPonudi;
+        private ObservableCollection<BicikloPredefinisano> biciklaUPonudi;
+        public ObservableCollection<BicikloPredefinisano> BiciklaUPonudi
+        {
+            get { return biciklaUPonudi; }
+            set { biciklaUPonudi = value; OnPropertyChanged("BiciklaUPonudi"); }
+        }
 
         public KatalogBicikala()
         {
@@ -19,23 +25,30 @@ namespace Bike_Shop_Đir.Model
 
         }
 
-        void obrisiBiciklo(int idBicikla)
+        void obrisiBiciklo(string idBicikla)
         {
-            KATALOG_BICIKALATableAdapter adapter = new KATALOG_BICIKALATableAdapter();
-            adapter.DeleteBiciklo(idBicikla);
+            biciklaUPonudi.Remove(biciklaUPonudi.Single(x => x.idBicikla == idBicikla));
         }
 
-        object prikaziBicikla()
+        void prikaziBicikla()
         {
-            KATALOG_BICIKALATableAdapter adapter = new KATALOG_BICIKALATableAdapter();
-            Baza.KATALOG_BICIKALADataTable tabela;
-            tabela = adapter.DajBicikla();
-            return tabela;
-            //ovdje mozete samo uraditi nesto tipa DataGrid nesto;
-            //                                     nesto.DataSource=prikaziBicikla(); i to bi trebalo raditi
+
         }
 
-       
+        /*void prikaziBicikla(TipBicikla tip)
+        {
+            foreach (BicikloPredefinisano b in biciklaUPonudi)
+                if (b.tipBicikla == tip) return; //...
+        }*/
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected void OnPropertyChanged(string propertyName)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
 
 
     }
