@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Bike_Shop_Đir.Model
 {
-    class BicikloPredefinisano : Biciklo
+    public class BicikloPredefinisano : Biciklo
     {
         string dodatniOpis { get; set; }
         string nazivProizvodjaca { get; set; }

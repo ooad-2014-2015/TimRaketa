@@ -11,23 +11,17 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using Bike_Shop_Đir.ViewModel;
-
-using bsd = Bike_Shop_Đir;
 
 namespace Bike_Shop_Đir.View
 {
     /// <summary>
-    /// Interaction logic for FormaRegistracijaILoginView.xaml
+    /// Interaction logic for FormaOdabirTure.xaml
     /// </summary>
-    public partial class FormaRegistracijaILoginView : Window
+    public partial class FormaOdabirTure : Window
     {
-
-        public FormaRegistracijaILoginView()
+        public FormaOdabirTure()
         {
             InitializeComponent();
-            DataContext = new RegistracijaViewModel();
-        
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿<Window x:Class="Bike_Shop_Đir.View.FormaGlavnaView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Bike Shop Đir" Height="534.5" Width="900">
+        Title="Bike Shop Đir" Height="534.5" Width="900" WindowStartupLocation="CenterScreen" ResizeMode="CanResize">
     <Grid Margin="0,0,-8,0">
         <Grid.RowDefinitions>
             <RowDefinition Height="250"/>
@@ -19,15 +19,16 @@
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.MenuHighlightColorKey}}"/>
             </Button.Foreground>
         </Button>
-        <Button Content="Odaberi bicilo" Name="dugmeBiciklo" Grid.Row="0" HorizontalAlignment="Left" Height="230" VerticalAlignment="Top" Width="420" Margin="10,10,0,0" Grid.Column="1" FontSize="20" BorderBrush="{x:Null}" FontFamily="Ravie" FontWeight="Bold" Click="dugmeBiciklo_Click">
+        <Button Name="dugmeBiciklo" Grid.Row="0" HorizontalAlignment="Left" Height="230" VerticalAlignment="Top" Width="420" Margin="10,10,0,0" Grid.Column="1" FontSize="20" BorderBrush="{x:Null}" FontFamily="Ravie" FontWeight="Bold" Click="dugmeBiciklo_Click" Command="{Binding Path=OdabirBicikla}">
             <Button.Background>
                 <ImageBrush ImageSource="pospok.jpg" Stretch="Uniform"/>
             </Button.Background>
             <Button.Foreground>
                 <SolidColorBrush Color="#FF3399FF"/>
             </Button.Foreground>
+            <Label Content="Odaberi bicikl" Foreground="#FF3399FF"/>
         </Button>
-        <Button Content="Odaberi turu" Name="dugmeTura" Grid.Column="0" HorizontalAlignment="Left" Height="230" VerticalAlignment="Top" Width="420" Margin="10,10,0,0" Grid.Row="1" FontSize="20" BorderBrush="{x:Null}" FontFamily="Ravie" FontWeight="Bold">
+        <Button Content="Odaberi turu" Name="dugmeTura" Grid.Column="0" HorizontalAlignment="Left" Height="230" VerticalAlignment="Top" Width="420" Margin="10,10,0,0" Grid.Row="1" FontSize="20" BorderBrush="{x:Null}" FontFamily="Ravie" FontWeight="Bold" Command="{Binding Path=OdabirTure}">
             <Button.Background>
                 <ImageBrush ImageSource="black-and-white-mountain-hi.png"/>
             </Button.Background>
@@ -35,7 +36,7 @@
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.MenuHighlightColorKey}}"/>
             </Button.Foreground>
         </Button>
-        <Button Content="Naruči se za servis" Name="dugmeServis" HorizontalAlignment="Left" Height="230" VerticalAlignment="Top" Width="420" Grid.Column="1" Grid.Row="1" Margin="10,10,0,0" FontSize="20" BorderBrush="{x:Null}" FontFamily="Ravie" FontWeight="Bold">
+        <Button Content="Naruči se za servis" Name="dugmeServis" HorizontalAlignment="Left" Height="230" VerticalAlignment="Top" Width="420" Grid.Column="1" Grid.Row="1" Margin="10,10,0,0" FontSize="20" BorderBrush="{x:Null}" FontFamily="Ravie" FontWeight="Bold" Command="{Binding Path=NarucivanjeServis}">
             <Button.Background>
                 <ImageBrush ImageSource="gear-outline.png" Stretch="Uniform"/>
             </Button.Background>

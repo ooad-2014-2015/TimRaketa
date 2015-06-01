@@ -8,9 +8,14 @@ using System.Windows;
 
 namespace Bike_Shop_Đir.Model
 {
-    class KatalogDijelova
+    public class KatalogDijelova
     {
-        List<DioBicikla> dijeloviUPonudi;
+        private List<DioBicikla> dijeloviUPonudi;
+        public List<DioBicikla> DijeloviUPonudi
+        {
+            get { return dijeloviUPonudi; }
+            set { dijeloviUPonudi = value; }
+        }
          
 
         public KatalogDijelova()

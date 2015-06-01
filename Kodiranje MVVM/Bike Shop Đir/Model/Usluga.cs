@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Bike_Shop_Đir.Model
 {
-    abstract class Usluga
+    public abstract class Usluga
     {
         private float cijenaUsluge;
 

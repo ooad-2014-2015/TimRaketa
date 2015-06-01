@@ -3,14 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Bike_Shop_Đir.BazaTableAdapters;
+//using Bike_Shop_Đir.BazaTableAdapters;
 
 namespace Bike_Shop_Đir.Model
 {
-    class KatalogTura
+    public class KatalogTura
     {
         static int brojTura;
-        List<Tura> tureUPonudi;
+        private List<Tura> tureUPonudi;
+        public List<Tura> TureUPonudi
+        {
+            get { return tureUPonudi; }
+            set { tureUPonudi = value; }
+        }
 
         public KatalogTura()
         {
@@ -20,9 +25,9 @@ namespace Bike_Shop_Đir.Model
         void dodajTuru(Tura novaTura)
         {
             tureUPonudi.Add(novaTura);
-            KATALOG_TURATableAdapter tureAdapter = new KATALOG_TURATableAdapter();
-            Baza.KATALOG_TURADataTable tabela;
-            tabela = tureAdapter.DajTure();
+            //KATALOG_TURATableAdapter tureAdapter = new KATALOG_TURATableAdapter();
+            //Baza.KATALOG_TURADataTable tabela;
+          //  tabela = tureAdapter.DajTure();
             
 
         }
