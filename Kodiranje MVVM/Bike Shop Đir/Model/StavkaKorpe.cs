@@ -3,25 +3,30 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
+using System.ComponentModel;
 
 namespace Bike_Shop_Đir.Model
 {
-    class StavkaKorpe
+    public class StavkaKorpe : INotifyPropertyChanged
     {
         static int redniBroj = 0;
 
         private int kolicina;
-
         public int Kolicina
         {
             get { return kolicina; }
-            set { kolicina = value; }
+            set { kolicina = value; OnPropertyChanged("Kolicina"); }
         }
 
-        Usluga tipUsluge;
+        private Usluga tipUsluge;
+        public Usluga TipUsluge
+        {
+            get { return tipUsluge; }
+            set { tipUsluge = value; }
+        }
 
         private float trenutnaCijena;
-
         public float TrenutnaCijena
         {
             get { return tipUsluge.CijenaUsluge * kolicina; }
@@ -38,7 +43,14 @@ namespace Bike_Shop_Đir.Model
 
         }
 
-
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected void OnPropertyChanged(string propertyName)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
 
         
         
