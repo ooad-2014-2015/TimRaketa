@@ -1,0 +1,20 @@
+﻿<Window x:Class="Bike_Shop_Đir.View.FormaNarucivanjeServis"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Narucivanje za servis" Height="300" Width="405.319">
+    <Grid Margin="0,0,2,0">
+        <Image HorizontalAlignment="Left" Height="269" VerticalAlignment="Top" Width="395" Source="gear-outline.png">
+            <Image.OpacityMask>
+                <SolidColorBrush Color="#FFC2DCD4" Opacity="0.325"/>
+            </Image.OpacityMask>
+        </Image>
+        <TextBox HorizontalAlignment="Left" Height="212" Margin="22,22,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="349" Text="{Binding Path=Servis.OpisProblema, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}">
+            <TextBox.Background>
+                <SolidColorBrush Color="White" Opacity="0.6"/>
+            </TextBox.Background>
+        </TextBox>
+        <Button Content="Naruči se" HorizontalAlignment="Left" Margin="282,239,0,0" VerticalAlignment="Top" Width="89" Command="{Binding Path=Naruci}"/>
+        <Label Content="Opišite ukratko vaš kvar:" HorizontalAlignment="Left" Margin="22,0,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>

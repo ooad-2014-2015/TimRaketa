@@ -9,7 +9,12 @@ namespace Bike_Shop_Đir.Model
     class KatalogBicikala
     {
         int brojBicikala { get; set; }
-        List<BicikloPredefinisano> biciklaUPonudi;
+        private List<BicikloPredefinisano> biciklaUPonudi;
+        public List<BicikloPredefinisano> BiciklaUPonudi
+        {
+            get { return biciklaUPonudi; }
+            set { biciklaUPonudi = value; }
+        }
 
         public KatalogBicikala()
         {

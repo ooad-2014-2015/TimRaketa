@@ -10,7 +10,12 @@ namespace Bike_Shop_Đir.Model
     class KatalogTura
     {
         static int brojTura;
-        List<Tura> tureUPonudi;
+        private List<Tura> tureUPonudi;
+        public List<Tura> TureUPonudi
+        {
+            get { return tureUPonudi; }
+            set { tureUPonudi = value; }
+        }
 
         public KatalogTura()
         {

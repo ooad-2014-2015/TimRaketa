@@ -62,20 +62,27 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Baza.cs">
-      <DependentUpon>Baza.xsd</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Baza.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Baza.xsd</DependentUpon>
-    </Compile>
     <Compile Include="ViewModel\GlavnaFormaViewModel.cs" />
+    <Compile Include="ViewModel\NarucivanjeServisViewModel.cs" />
+    <Compile Include="ViewModel\OdabirBiciklaViewModel.cs" />
+    <Compile Include="ViewModel\OdabirTureViewModel.cs" />
+    <Compile Include="ViewModel\PrikazItemaViewModel.cs" />
     <Compile Include="ViewModel\RegistracijaViewModel.cs" />
     <Compile Include="ViewModel\RelayCommand.cs" />
     <Compile Include="View\FormaGlavnaView.xaml.cs">
       <DependentUpon>FormaGlavnaView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormaNarucivanjeServis.xaml.cs">
+      <DependentUpon>FormaNarucivanjeServis.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormaOdabirBicikla.xaml.cs">
+      <DependentUpon>FormaOdabirBicikla.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormaOdabirTure.xaml.cs">
+      <DependentUpon>FormaOdabirTure.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormaPrikazItema.xaml.cs">
+      <DependentUpon>FormaPrikazItema.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\FormaRegistracijaILoginView.xaml.cs">
       <DependentUpon>FormaRegistracijaILoginView.xaml</DependentUpon>
@@ -85,6 +92,22 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="View\FormaGlavnaView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\FormaNarucivanjeServis.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\FormaOdabirBicikla.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\FormaOdabirTure.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\FormaPrikazItema.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -127,17 +150,6 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <None Include="Baza.xsc">
-      <DependentUpon>Baza.xsd</DependentUpon>
-    </None>
-    <None Include="Baza.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Baza.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Baza.xss">
-      <DependentUpon>Baza.xsd</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

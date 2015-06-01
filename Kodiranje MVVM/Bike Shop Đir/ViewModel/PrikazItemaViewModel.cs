@@ -8,5 +8,6 @@ namespace Bike_Shop_Đir.ViewModel
 {
     class PrikazItemaViewModel
     {
+
     }
 }
