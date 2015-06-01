@@ -1,7 +1,7 @@
 ﻿<Window x:Class="Bike_Shop_Đir.View.FormaGlavnaView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Bike Shop Đir" Height="534.5" Width="900">
+        Title="Bike Shop Đir" Height="534.5" Width="900" WindowStartupLocation="CenterScreen" ResizeMode="CanResize">
     <Grid Margin="0,0,-8,0">
         <Grid.RowDefinitions>
             <RowDefinition Height="250"/>

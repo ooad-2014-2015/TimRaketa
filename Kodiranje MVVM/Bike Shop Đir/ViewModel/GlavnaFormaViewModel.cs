@@ -6,11 +6,13 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
+using bsd = Bike_Shop_Đir;
 
 namespace Bike_Shop_Đir.ViewModel
 {
-    internal class GlavnaFormaViewModel : INotifyPropertyChanged
+    public class GlavnaFormaViewModel : INotifyPropertyChanged
     {
         public ICommand RegistracijaILogovanje { get; set; }
 
@@ -22,7 +24,6 @@ namespace Bike_Shop_Đir.ViewModel
         }
 
         private Klijent noviKlijent;
-
         public Klijent NoviKlijent
         {
             get { return noviKlijent; }
@@ -30,32 +31,31 @@ namespace Bike_Shop_Đir.ViewModel
         }
 
 
-        RegistracijaViewModel dijeteRegistracijaViewModel;
+    /*    RegistracijaViewModel dijeteRegistracijaViewModel;
         public RegistracijaViewModel DijeteRegistracijaViewModel
         {
           get { return dijeteRegistracijaViewModel; }
           set { dijeteRegistracijaViewModel = value; }
-        }
+        }*/
 
         public static Klijent prijavljeni { get; set; }
+        
 
-
-               
         public GlavnaFormaViewModel()
         {
             prijavljeni = null;
+          //  NoviKlijent = new Klijent();
             RegistracijaILogovanje = new RelayCommand(registracijaILogovanjeKlik);
-            DijeteRegistracijaViewModel = new RegistracijaViewModel();
+          //  DijeteRegistracijaViewModel = new RegistracijaViewModel(this);
+            
         }
 
         public void registracijaILogovanjeKlik(object parametar)
         {
             FormaRegistracija = new FormaRegistracijaILoginView();
-
-       //     FormaRegistracija.DataContext = DijeteRegistracijaViewModel;
-          
-
-            FormaRegistracija.Show();
+            //FormaRegistracija.DataContext = this;
+            FormaRegistracija.Visibility = Visibility.Visible;
+        
         }
 
 

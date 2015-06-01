@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Bike_Shop_Đir.Model
 {
-    class Osoba : INotifyPropertyChanged
+    public class Osoba : INotifyPropertyChanged
     {
         private string ime;
 
