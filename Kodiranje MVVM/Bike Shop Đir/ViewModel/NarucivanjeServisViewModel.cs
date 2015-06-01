@@ -7,16 +7,18 @@ using System.Windows.Input;
 using System.ComponentModel;
 using Bike_Shop_Đir.Model;
 using Bike_Shop_Đir.View;
+using System.Windows.Input;
+using System.ComponentModel;
 
 namespace Bike_Shop_Đir.ViewModel
 {
-    public class NarucivanjeServisViewModel
+    public class NarucivanjeServisViewModel : INotifyPropertyChanged
     {
         private Servis servis;
         public Servis Servis
         {
             get { return servis; }
-            set { servis = value; }
+            set { servis = value; OnPropertyChanged("Servis"); }
         }
 
         public ICommand Naruci { get; set; }
@@ -38,6 +40,15 @@ namespace Bike_Shop_Đir.ViewModel
         private void uBazu(Servis pServis)
         {
             //dodavanje novog servisa u bazu
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected void OnPropertyChanged(string propertyName)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
         }
     }
 }

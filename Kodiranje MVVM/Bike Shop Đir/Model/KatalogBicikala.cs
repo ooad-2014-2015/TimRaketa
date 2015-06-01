@@ -3,22 +3,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
+using System.ComponentModel;
+using System.Collections.ObjectModel;
 
 namespace Bike_Shop_Đir.Model
 {
-    public class KatalogBicikala
+    public class KatalogBicikala : INotifyPropertyChanged
     {
         int brojBicikala { get; set; }
-        private List<BicikloPredefinisano> biciklaUPonudi;
-        public List<BicikloPredefinisano> BiciklaUPonudi
+        private ObservableCollection<BicikloPredefinisano> biciklaUPonudi;
+        public ObservableCollection<BicikloPredefinisano> BiciklaUPonudi
         {
             get { return biciklaUPonudi; }
-            set { biciklaUPonudi = value; }
+            set { biciklaUPonudi = value; OnPropertyChanged("BiciklaUPonudi"); }
         }
 
         public KatalogBicikala()
         {
-            biciklaUPonudi = new List<BicikloPredefinisano>();
+            biciklaUPonudi = new ObservableCollection<BicikloPredefinisano>();
 
         }
 
@@ -37,6 +40,15 @@ namespace Bike_Shop_Đir.Model
             foreach (BicikloPredefinisano b in biciklaUPonudi)
                 if (b.tipBicikla == tip) return; //...
         }*/
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected void OnPropertyChanged(string propertyName)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
 
 
     }
