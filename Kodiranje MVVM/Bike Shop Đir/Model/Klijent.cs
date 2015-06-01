@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Bike_Shop_Đir.Model
 {
     // Upitno mi je jesmo li trebali razdvojiti kreditnu karticu kao zasebnu klasu...
-    class Klijent : Osoba, INotifyPropertyChanged 
+    public class Klijent : Osoba, INotifyPropertyChanged 
     {
         private string userName;
 

@@ -34,9 +34,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
@@ -63,26 +60,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ViewModel\GlavnaFormaViewModel.cs" />
-    <Compile Include="ViewModel\NarucivanjeServisViewModel.cs" />
-    <Compile Include="ViewModel\OdabirBiciklaViewModel.cs" />
-    <Compile Include="ViewModel\OdabirTureViewModel.cs" />
-    <Compile Include="ViewModel\PrikazItemaViewModel.cs" />
     <Compile Include="ViewModel\RegistracijaViewModel.cs" />
     <Compile Include="ViewModel\RelayCommand.cs" />
     <Compile Include="View\FormaGlavnaView.xaml.cs">
       <DependentUpon>FormaGlavnaView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\FormaNarucivanjeServis.xaml.cs">
-      <DependentUpon>FormaNarucivanjeServis.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\FormaOdabirBicikla.xaml.cs">
-      <DependentUpon>FormaOdabirBicikla.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\FormaOdabirTure.xaml.cs">
-      <DependentUpon>FormaOdabirTure.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\FormaPrikazItema.xaml.cs">
-      <DependentUpon>FormaPrikazItema.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\FormaRegistracijaILoginView.xaml.cs">
       <DependentUpon>FormaRegistracijaILoginView.xaml</DependentUpon>
@@ -92,22 +73,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="View\FormaGlavnaView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\FormaNarucivanjeServis.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\FormaOdabirBicikla.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\FormaOdabirTure.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\FormaPrikazItema.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -150,7 +115,6 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
