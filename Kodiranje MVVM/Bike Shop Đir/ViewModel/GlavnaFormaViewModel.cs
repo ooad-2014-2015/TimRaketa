@@ -19,6 +19,20 @@ namespace Bike_Shop_Đir.ViewModel
         public ICommand OdabirTure { get; set; }
         public ICommand NarucivanjeServis { get; set; }
 
+        private bool zaposlenikLogovan;
+        public bool ZaposlenikLogovan
+        {
+            get { return zaposlenikLogovan; }
+            set { zaposlenikLogovan = value; }
+        }
+
+        private bool klijentLogovan;
+        public bool KlijentLogovan
+        {
+            get { return klijentLogovan; }
+            set { KlijentLogovan = value; }
+        }
+
         private FormaOdabirBicikla formaOdabirBicikla;
         public FormaOdabirBicikla FormaOdabirBicikla
         {
@@ -102,7 +116,8 @@ namespace Bike_Shop_Đir.ViewModel
 
         public void odabirBicikla(object parametar)
         {
-            formaOdabirBicikla = new FormaOdabirBicikla();
+            azuriraj();
+            formaOdabirBicikla = new FormaOdabirBicikla(zaposlenikLogovan, klijentLogovan);
             odabirBiciklaViewModel = new OdabirBiciklaViewModel();
             formaOdabirBicikla.DataContext = odabirBiciklaViewModel;
             formaOdabirBicikla.Show();
@@ -110,10 +125,23 @@ namespace Bike_Shop_Đir.ViewModel
 
         public void odabirTure(object parametar)
         {
-            formaOdabirTure = new FormaOdabirTure();
+            azuriraj();
+            formaOdabirTure = new FormaOdabirTure(zaposlenikLogovan, klijentLogovan);
             odabirTureViewModel = new OdabirTureViewModel();
             formaOdabirTure.DataContext = odabirTureViewModel;
             formaOdabirTure.Show();
+        }
+
+        public void azuriraj()
+        {
+            if (Zaposlenik != null)
+                zaposlenikLogovan = true;
+            else
+                zaposlenikLogovan = false;
+            if (NoviKlijent != null)
+                klijentLogovan = true;
+            else
+                klijentLogovan = false;
         }
 
         public void narucivanjeServis(object parametar)
