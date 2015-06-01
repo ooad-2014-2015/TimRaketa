@@ -11,6 +11,7 @@ using Bike_Shop_Đir.View;
 using bsd = Bike_Shop_Đir.View;
 using System.Data.Objects.DataClasses;
 using System.Windows.Media;
+using WPFCSharpWebCam;
 
 
 namespace Bike_Shop_Đir.ViewModel
@@ -26,6 +27,7 @@ namespace Bike_Shop_Đir.ViewModel
  
         public ICommand Registracija { get; set; }
         public ICommand Login { get; set; }
+        public ICommand Skeniraj { get; set; }
 
 //textblock style za login: 
         private string porukaGreske;
@@ -89,13 +91,23 @@ namespace Bike_Shop_Đir.ViewModel
             set { noviKlijent = value; }
         }
 
+        private Zaposlenik zaposlenik;
+
+        public Zaposlenik Zaposlenik
+        {
+            get { return zaposlenik; }
+            set { zaposlenik = value; }
+        }
+        
+
 
         public RegistracijaViewModel(GlavnaFormaViewModel g)
         {
-            parent = g;
+            Parent = g;
             NoviKlijent = new Klijent();
             Registracija = new RelayCommand(registracijaKlik);
             Login = new RelayCommand(loginKlik);
+            Skeniraj = new RelayCommand(skeniranje);
             
         }
 
@@ -107,7 +119,7 @@ namespace Bike_Shop_Đir.ViewModel
             PorukaGreske2 = "Uspjesno ste registrovani!";
             BojaGreske = "Zelena";
             VidljivaGreska2 = Visibility.Visible;
-            parent.NoviKlijent = this.NoviKlijent;
+            Parent.NoviKlijent = this.NoviKlijent;
         }
 
         public void loginKlik(object parameter)
@@ -127,12 +139,24 @@ namespace Bike_Shop_Đir.ViewModel
                 PorukaGreske = "Prijavljeni ste!";
                 BojaGreske = "Zelena";
                 VidljivaGreska = Visibility.Visible;
-                parent.NoviKlijent = this.NoviKlijent;
+                if (NoviKlijent.UserName == "zaposlenik")
+                {
+                    Parent.Zaposlenik = this.Zaposlenik;
+                }
+                else
+                {
+                    Parent.NoviKlijent = this.NoviKlijent;
+                }
             }
         }
 
 
-        
+        public void skeniranje(object parameter)
+        {
+            Window1 w = new Window1();
+            w.Show();
+
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged(string propertyName)

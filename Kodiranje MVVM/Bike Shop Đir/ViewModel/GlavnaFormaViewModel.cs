@@ -19,20 +19,6 @@ namespace Bike_Shop_Đir.ViewModel
         public ICommand OdabirTure { get; set; }
         public ICommand NarucivanjeServis { get; set; }
 
-        private bool zaposlenikLogovan;
-        public bool ZaposlenikLogovan
-        {
-            get { return zaposlenikLogovan; }
-            set { zaposlenikLogovan = value; }
-        }
-
-        private bool klijentLogovan;
-        public bool KlijentLogovan
-        {
-            get { return klijentLogovan; }
-            set { klijentLogovan = value; }
-        }
-
         private FormaOdabirBicikla formaOdabirBicikla;
         public FormaOdabirBicikla FormaOdabirBicikla
         {
@@ -52,13 +38,6 @@ namespace Bike_Shop_Đir.ViewModel
         {
             get { return formaOdabirTure; }
             set { formaOdabirTure = value; }
-        }
-
-        private Korpa korpa;
-        public Korpa Korpa
-        {
-            get { return korpa; }
-            set { korpa = value; OnPropertyChanged("Korpa"); }
         }
 
         private OdabirTureViewModel odabirTureViewModel;
@@ -102,15 +81,15 @@ namespace Bike_Shop_Đir.ViewModel
             get { return zaposlenik; }
             set { zaposlenik = value; }
         }
+        
 
         public GlavnaFormaViewModel()
         {
+            Zaposlenik = null;
             NoviKlijent = null;
-            zaposlenik = null;
             RegistracijaILogovanje = new RelayCommand(registracijaILogovanjeKlik);
             OdabirBicikla = new RelayCommand(odabirBicikla);
             OdabirTure = new RelayCommand(odabirTure);
-            korpa = new Korpa();
             NarucivanjeServis = new RelayCommand(narucivanjeServis);    
         }
 
@@ -123,46 +102,28 @@ namespace Bike_Shop_Đir.ViewModel
 
         public void odabirBicikla(object parametar)
         {
-            azurirajStanje();
-            formaOdabirBicikla = new FormaOdabirBicikla(zaposlenikLogovan, klijentLogovan);
+            formaOdabirBicikla = new FormaOdabirBicikla();
             odabirBiciklaViewModel = new OdabirBiciklaViewModel();
-            odabirBiciklaViewModel.Parent = this;
             formaOdabirBicikla.DataContext = odabirBiciklaViewModel;
             formaOdabirBicikla.Show();
         }
 
         public void odabirTure(object parametar)
         {
-            azurirajStanje();
-            formaOdabirTure = new FormaOdabirTure(zaposlenikLogovan, klijentLogovan);
+            formaOdabirTure = new FormaOdabirTure();
             odabirTureViewModel = new OdabirTureViewModel();
-            odabirTureViewModel.Parent = this;
             formaOdabirTure.DataContext = odabirTureViewModel;
             formaOdabirTure.Show();
         }
 
         public void narucivanjeServis(object parametar)
         {
-            narucivanjeServisViewModel = new NarucivanjeServisViewModel();
-            formaNarucivanjeServis = new FormaNarucivanjeServis();
-            formaNarucivanjeServis.DataContext = narucivanjeServisViewModel;
-            if (narucivanjeServisViewModel.CloseAction == null)
-                narucivanjeServisViewModel.CloseAction = new Action(() => formaNarucivanjeServis.Close());
+            formaNarucivanjeServis = new FormaNarucivanjeServis(this);
+        //    if (narucivanjeServisViewModel.CloseAction == null)
+         //       narucivanjeServisViewModel.CloseAction = new Action(() => formaNarucivanjeServis.Close());
             formaNarucivanjeServis.Show();
         }
 
-        private void azurirajStanje()
-        {
-            if (Zaposlenik != null)
-                zaposlenikLogovan = true;
-            else
-                zaposlenikLogovan = false;
-
-            if (NoviKlijent != null)
-                klijentLogovan = true;
-            else
-                klijentLogovan = false;
-        }
 
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged(string propertyName)
