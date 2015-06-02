@@ -6,6 +6,7 @@ using WebCam_Capture;
 using System.Windows.Controls;
 using System.Collections.Generic;
 using System.Windows.Media.Imaging;
+using BarcodeLib.BarcodeReader;
 
 
 namespace WPFCSharpWebCam
@@ -59,6 +60,7 @@ namespace WPFCSharpWebCam
         {
             webcam.Config2();
         }
+
 
     }
 }

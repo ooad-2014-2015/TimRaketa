@@ -7,8 +7,7 @@ using System.Windows.Input;
 using System.ComponentModel;
 using Bike_Shop_Đir.Model;
 using Bike_Shop_Đir.View;
-using System.Windows.Input;
-using System.ComponentModel;
+
 
 namespace Bike_Shop_Đir.ViewModel
 {
