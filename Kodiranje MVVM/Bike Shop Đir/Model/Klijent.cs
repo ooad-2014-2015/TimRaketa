@@ -65,8 +65,8 @@ namespace Bike_Shop_Đir.Model
         public void upisiUBazu()
         {
             KLIJENTITableAdapter adapter = new KLIJENTITableAdapter();
-            //adapter.Insert(this.Ime, this.Prezime, this.AdresaStanovanja, this.UserName, this.Sifra, Convert.ToInt32(34234));
-            adapter.Insert("Osman", "Lav", "Svugdje", "osmanLav", "123456", Convert.ToInt32(32432));
+            adapter.Insert(this.Ime, this.Prezime, this.AdresaStanovanja, this.UserName, this.Sifra, Convert.ToInt32(34234));
+           // adapter.Insert("Osman", "Lav", "Svugdje", "osmanLav", "123456", Convert.ToInt32(32432));
             return;
         }
 
