@@ -11,39 +11,39 @@
         </LinearGradientBrush>
     </Window.Background>
     <Grid>
-    	<Grid.RowDefinitions>
-    		<RowDefinition Height="0.11*"/>
-    		<RowDefinition Height="0.442*"/>
-    		<RowDefinition Height="0.067*"/>
-    		<RowDefinition Height="0.088*"/>
-    		<RowDefinition Height="0.293*"/>
-    	</Grid.RowDefinitions>
-    	<Grid.ColumnDefinitions>
-    		<ColumnDefinition Width="0.068*"/>
-    		<ColumnDefinition Width="0.274*"/>
-    		<ColumnDefinition Width="0.069*"/>
-    		<ColumnDefinition Width="0.274*"/>
-    		<ColumnDefinition Width="0.315*"/>
-    	</Grid.ColumnDefinitions>
-		<Border  Grid.Column="1" Grid.Row="1" BorderThickness="3" CornerRadius="3">
-			<Border.BorderBrush>
-				<RadialGradientBrush>
-					<GradientStop Color="Black" Offset="0.047"/>
-					<GradientStop Color="#FF00907A" Offset="1"/>
-				</RadialGradientBrush>
-			</Border.BorderBrush>
-			<Image x:Name="imgVideo" Stretch="Fill"   />
-		</Border>
-    	<Border  Grid.Column="3" Grid.Row="1" BorderThickness="3" CornerRadius="3">
-			<Border.BorderBrush>
-				<RadialGradientBrush>
-					<GradientStop Color="Black" Offset="0.047"/>
-					<GradientStop Color="#FF00907A" Offset="1"/>
-				</RadialGradientBrush>
-			</Border.BorderBrush>
-			<Image x:Name="imgCapture" Stretch="Fill"/>
-		</Border>
-		<StackPanel Grid.Column="3" Grid.Row="3" Orientation="Horizontal">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.11*"/>
+            <RowDefinition Height="0.442*"/>
+            <RowDefinition Height="0.067*"/>
+            <RowDefinition Height="0.088*"/>
+            <RowDefinition Height="0.293*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.068*"/>
+            <ColumnDefinition Width="0.274*"/>
+            <ColumnDefinition Width="0.069*"/>
+            <ColumnDefinition Width="0.274*"/>
+            <ColumnDefinition Width="0.315*"/>
+        </Grid.ColumnDefinitions>
+        <Border  Grid.Column="1" Grid.Row="1" BorderThickness="3" CornerRadius="3">
+            <Border.BorderBrush>
+                <RadialGradientBrush>
+                    <GradientStop Color="Black" Offset="0.047"/>
+                    <GradientStop Color="#FF00907A" Offset="1"/>
+                </RadialGradientBrush>
+            </Border.BorderBrush>
+            <Image x:Name="imgVideo" Stretch="Fill"   />
+        </Border>
+        <Border  Grid.Column="3" Grid.Row="1" BorderThickness="3" CornerRadius="3">
+            <Border.BorderBrush>
+                <RadialGradientBrush>
+                    <GradientStop Color="Black" Offset="0.047"/>
+                    <GradientStop Color="#FF00907A" Offset="1"/>
+                </RadialGradientBrush>
+            </Border.BorderBrush>
+            <Image x:Name="imgCapture" Stretch="Fill"/>
+        </Border>
+        <StackPanel Grid.Column="3" Grid.Row="3" Orientation="Horizontal">
             <Button x:Name="bntCapture" Content="Uslikaj" Click="bntCapture_Click" FontWeight="Bold" >
                 <Button.Foreground>
                     <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HighlightColorKey}}"/>
@@ -56,7 +56,7 @@
             </Button>
         </StackPanel>
         <StackPanel Grid.Column="4" Grid.Row="1" VerticalAlignment="Center">
-			<Button x:Name="bntResolution" Content="Video Format" Width="120" Click="bntResolution_Click" FontWeight="Bold" >
+            <Button x:Name="bntResolution" Content="Video Format" Width="120" Click="bntResolution_Click" FontWeight="Bold" >
                 <Button.Foreground>
                     <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HighlightColorKey}}"/>
                 </Button.Foreground>
@@ -67,7 +67,7 @@
                 </Button.Foreground>
             </Button>
         </StackPanel>
-		<StackPanel Grid.Column="1" Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center">
+        <StackPanel Grid.Column="1" Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center">
             <Button x:Name="bntStart" Content="Start" Click="bntStart_Click" FontWeight="Bold" >
                 <Button.Foreground>
                     <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HighlightColorKey}}"/>
@@ -89,5 +89,14 @@
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HighlightColorKey}}"/>
             </TextBlock.Foreground>
         </TextBlock>
+        <Button x:Name="QR" Content="Ucitaj QR" Grid.Column="4" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="3" VerticalAlignment="Bottom" Width="166" Height="32" Click="QR_Click" FontWeight="Bold">
+            <Button.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HighlightColorKey}}"/>
+            </Button.Foreground>
+        </Button>
+        <TextBlock x:Name="qrText" Grid.Column="1" HorizontalAlignment="Left" Margin="95,68,0,0" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Top" Grid.ColumnSpan="3" Height="30" Width="154" FrameworkElement.FlowDirection="RightToLeft" TextAlignment="Center" FontSize="16" FontWeight="Bold">
+            <TextBlock.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HighlightColorKey}}"/>
+            </TextBlock.Foreground><Run/><LineBreak/><Run/></TextBlock>
     </Grid>
 </Window>
