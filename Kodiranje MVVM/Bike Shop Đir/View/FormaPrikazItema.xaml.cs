@@ -19,8 +19,16 @@ namespace Bike_Shop_Đir.View
     /// </summary>
     public partial class FormaPrikazItema : Window
     {
-        public FormaPrikazItema()
+        public FormaPrikazItema(bool zaposlenik, bool klijent)
         {
+            if (zaposlenik)
+            {
+                button1.Visibility = System.Windows.Visibility.Visible;
+            }
+            if (klijent)
+            {
+                button2.Visibility = System.Windows.Visibility.Visible;
+            }
             InitializeComponent();
         }
     }

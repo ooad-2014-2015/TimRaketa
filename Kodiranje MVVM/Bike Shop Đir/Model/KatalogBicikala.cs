@@ -27,7 +27,7 @@ namespace Bike_Shop_Đir.Model
 
         void obrisiBiciklo(string idBicikla)
         {
-            biciklaUPonudi.Remove(biciklaUPonudi.Single(x => x.idBicikla == idBicikla));
+            biciklaUPonudi.Remove(biciklaUPonudi.Single(x => x.IDBicikla == idBicikla));
         }
 
         void prikaziBicikla()

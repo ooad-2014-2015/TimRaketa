@@ -1,10 +1,29 @@
 ﻿<Window x:Class="Bike_Shop_Đir.View.FormaPrikazItema"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="FormaPrikazItema" Height="300" Width="352.128">
+        Title="Prikaz ponude" Height="370" Width="384.128">
     <Grid>
-        <Button Content="Kupi" HorizontalAlignment="Left" Margin="259,239,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button Content="Obriši" HorizontalAlignment="Left" Margin="170,239,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="button2" Content="Kupi" HorizontalAlignment="Left" Margin="287,304,0,0" VerticalAlignment="Top" Width="75" IsManipulationEnabled="True" Command="{Binding Path=Kupi}"/>
+        <Button x:Name="button1" Content="Obriši" HorizontalAlignment="Left" Margin="195,304,0,0" VerticalAlignment="Top" Width="75" IsManipulationEnabled="True" Command="{Binding Path=Brisi}"/>
+        <Label Content="Naziv:" HorizontalAlignment="Left" Margin="10,185,0,0" VerticalAlignment="Top" FontSize="18">
+            <Label.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HighlightColorKey}}"/>
+            </Label.Foreground>
+        </Label>
+        <Label Content="Cijena:" HorizontalAlignment="Left" Margin="219,185,0,0" VerticalAlignment="Top" FontSize="18">
+            <Label.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HighlightColorKey}}"/>
+            </Label.Foreground>
+        </Label>
+        <Label Content="Opis:" HorizontalAlignment="Left" Margin="10,208,0,0" VerticalAlignment="Top" FontSize="18">
+            <Label.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HighlightColorKey}}"/>
+            </Label.Foreground>
+        </Label>
+        <TextBlock HorizontalAlignment="Left" Margin="73,195,0,0" TextWrapping="Wrap" Text="Scott Voltage" VerticalAlignment="Top" Width="110" Height="21"/>
+        <TextBlock HorizontalAlignment="Left" Margin="287,195,0,0" TextWrapping="Wrap" Text="1220" VerticalAlignment="Top" Width="59" Height="21"/>
+        <TextBlock HorizontalAlignment="Left" Margin="15,242,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="351" Height="57"><Run Text="Scott voltage je brdski bicikl. Veoma je kvalitetan i mizdržljiv. Posjeduje najnoviju opremu"/><Run Text="."/></TextBlock>
+        <Image HorizontalAlignment="Left" Height="170" Margin="10,10,0,0" VerticalAlignment="Top" Width="356"/>
 
     </Grid>
 </Window>

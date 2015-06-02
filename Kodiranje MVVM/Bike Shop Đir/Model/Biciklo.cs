@@ -8,7 +8,12 @@ namespace Bike_Shop_Đir.Model
 {
     public abstract class Biciklo : Usluga
     {
-        public string idBicikla { get; set; }
+        private string idBicikla;
+        public string IDBicikla
+        {
+            get { return idBicikla; }
+            set { idBicikla = value; }
+        }
 
 
 

@@ -12,11 +12,10 @@ namespace Bike_Shop_Đir.Model
     {
         public enum statusServisa { AnalizaKvara, Servisiranje, NaCekanju, Popravljen};
 
-        private string id;
-        public string ID
+        public static string ID
         {
-            get { return id; }
-            set { id = value; }
+            get { return ID; }
+            set { ID = value; }
         }
 
         private string opisProblema;
@@ -43,13 +42,11 @@ namespace Bike_Shop_Đir.Model
             CijenaUsluge = pcijena;
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected void OnPropertyChanged(string propertyName)
+
+        public void upisiUBazu()
         {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            //dodijeliti mu ID i upisati...
+            return;
         }
 
     }

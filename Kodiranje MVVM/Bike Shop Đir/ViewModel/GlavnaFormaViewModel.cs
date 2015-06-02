@@ -19,6 +19,20 @@ namespace Bike_Shop_Đir.ViewModel
         public ICommand OdabirTure { get; set; }
         public ICommand NarucivanjeServis { get; set; }
 
+        private bool zaposlenikLogovan;
+        public bool ZaposlenikLogovan
+        {
+            get { return zaposlenikLogovan; }
+            set { zaposlenikLogovan = value; }
+        }
+
+        private bool klijentLogovan;
+        public bool KlijentLogovan
+        {
+            get { return klijentLogovan; }
+            set { KlijentLogovan = value; }
+        }
+
         private FormaOdabirBicikla formaOdabirBicikla;
         public FormaOdabirBicikla FormaOdabirBicikla
         {
@@ -75,40 +89,35 @@ namespace Bike_Shop_Đir.ViewModel
             set { noviKlijent = value; }
         }
 
-
-    /*    RegistracijaViewModel dijeteRegistracijaViewModel;
-        public RegistracijaViewModel DijeteRegistracijaViewModel
+        private Zaposlenik zaposlenik;
+        public Zaposlenik Zaposlenik
         {
-          get { return dijeteRegistracijaViewModel; }
-          set { dijeteRegistracijaViewModel = value; }
-        }*/
-
-        public static Klijent prijavljeni { get; set; }
+            get { return zaposlenik; }
+            set { zaposlenik = value; }
+        }
         
 
         public GlavnaFormaViewModel()
         {
-            prijavljeni = null;
-          //  NoviKlijent = new Klijent();
+            Zaposlenik = null;
+            NoviKlijent = null;
             RegistracijaILogovanje = new RelayCommand(registracijaILogovanjeKlik);
-          //  DijeteRegistracijaViewModel = new RegistracijaViewModel(this);
             OdabirBicikla = new RelayCommand(odabirBicikla);
             OdabirTure = new RelayCommand(odabirTure);
-            NarucivanjeServis = new RelayCommand(narucivanjeServis);
-            
+            NarucivanjeServis = new RelayCommand(narucivanjeServis);    
         }
 
         public void registracijaILogovanjeKlik(object parametar)
         {
-            FormaRegistracija = new FormaRegistracijaILoginView();
-            //FormaRegistracija.DataContext = this;
+            FormaRegistracija = new FormaRegistracijaILoginView(this);
             FormaRegistracija.Visibility = Visibility.Visible;
         
         }
 
         public void odabirBicikla(object parametar)
         {
-            formaOdabirBicikla = new FormaOdabirBicikla();
+            azuriraj();
+            formaOdabirBicikla = new FormaOdabirBicikla(zaposlenikLogovan, klijentLogovan);
             odabirBiciklaViewModel = new OdabirBiciklaViewModel();
             formaOdabirBicikla.DataContext = odabirBiciklaViewModel;
             formaOdabirBicikla.Show();
@@ -116,19 +125,30 @@ namespace Bike_Shop_Đir.ViewModel
 
         public void odabirTure(object parametar)
         {
-            formaOdabirTure = new FormaOdabirTure();
+            azuriraj();
+            formaOdabirTure = new FormaOdabirTure(zaposlenikLogovan, klijentLogovan);
             odabirTureViewModel = new OdabirTureViewModel();
             formaOdabirTure.DataContext = odabirTureViewModel;
             formaOdabirTure.Show();
         }
 
+        public void azuriraj()
+        {
+            if (Zaposlenik != null)
+                zaposlenikLogovan = true;
+            else
+                zaposlenikLogovan = false;
+            if (NoviKlijent != null)
+                klijentLogovan = true;
+            else
+                klijentLogovan = false;
+        }
+
         public void narucivanjeServis(object parametar)
         {
-            narucivanjeServisViewModel = new NarucivanjeServisViewModel();
-            formaNarucivanjeServis = new FormaNarucivanjeServis();
-            formaNarucivanjeServis.DataContext = narucivanjeServisViewModel;
-            if (narucivanjeServisViewModel.CloseAction == null)
-                narucivanjeServisViewModel.CloseAction = new Action(() => formaNarucivanjeServis.Close());
+            formaNarucivanjeServis = new FormaNarucivanjeServis(this);
+        //    if (narucivanjeServisViewModel.CloseAction == null)
+         //       narucivanjeServisViewModel.CloseAction = new Action(() => formaNarucivanjeServis.Close());
             formaNarucivanjeServis.Show();
         }
 

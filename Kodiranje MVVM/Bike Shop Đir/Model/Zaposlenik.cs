@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Bike_Shop_Đir.Model
 {
-    class Zaposlenik : Osoba
+    public class Zaposlenik : Osoba
     {
         private string idZaposlenika;
 

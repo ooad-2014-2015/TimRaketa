@@ -26,12 +26,83 @@ namespace Bike_Shop_Đir.ViewModel
             set { dijelovi = value; OnPropertyChanged("Dijelovi"); }
         }
 
+        private FormaPrikazItema formaPrikazItema;
+        public FormaPrikazItema FormaPrikazItema
+        {
+            get { return formaPrikazItema; }
+            set { formaPrikazItema = value; }
+        }
+
+        private PrikazItemaViewModel prikazItemaViewModel;
+        public PrikazItemaViewModel PrikazItemaViewModel
+        {
+            get { return prikazItemaViewModel; }
+            set { prikazItemaViewModel = value; }
+        }
+
+        private GlavnaFormaViewModel parent;
+        public GlavnaFormaViewModel Parent
+        {
+            get { return parent; }
+            set { parent = value; }
+        }
+
+        public ICommand Otvori { get; set; }
+
         public OdabirBiciklaViewModel()
         {
             bicikla = new KatalogBicikala();
             dijelovi = new KatalogDijelova();
+            Otvori = new RelayCommand(otvori);
+            napuni();
             povuciIzBazeBicikla();
             povuciIzBazeDijelove();
+        }
+
+        //ova će funkcija biti obrisana kad se povežemo sa bazom, sada služi samo za simulaciju rada
+        private void napuni()
+        {
+            BicikloPredefinisano b1 = new BicikloPredefinisano();
+            BicikloPredefinisano b2 = new BicikloPredefinisano();
+            BicikloPredefinisano b3 = new BicikloPredefinisano();
+            BicikloPredefinisano b4 = new BicikloPredefinisano();
+            BicikloPredefinisano b5 = new BicikloPredefinisano();
+
+            b1.IDBicikla = "Scott Voltage";
+            b2.IDBicikla = "GT 2.0";
+            b3.IDBicikla = "CUBE Acid";
+            b4.IDBicikla = "Canyon Grand";
+            b5.IDBicikla = "Wichita Unit XT";
+
+            b1.CijenaUsluge = 850;
+            b2.CijenaUsluge = 600;
+            b3.CijenaUsluge = 900;
+            b4.CijenaUsluge = 1500;
+            b5.CijenaUsluge = 1500;
+
+            b1.DodatniOpis = "Ovaj bicikl je odličan za brdsku vožnju jer ima ojačanu opremu. \nTakođer, vrlo je lagan i dobar za duge uspone.";
+            b2.DodatniOpis = "Ovaj bicikl je odličan za brdsku vožnju jer ima ojačanu opremu. \nTakođer, vrlo je lagan i dobar za duge uspone.";
+            b3.DodatniOpis = "Ovaj bicikl je odličan za brdsku vožnju jer ima ojačanu opremu. \nTakođer, vrlo je lagan i dobar za duge uspone.";
+            b4.DodatniOpis = "Ovaj bicikl je odličan za brdsku vožnju jer ima ojačanu opremu. \nTakođer, vrlo je lagan i dobar za duge uspone.";
+            b5.DodatniOpis = "Ovaj bicikl je odličan za brdsku vožnju jer ima ojačanu opremu. \nTakođer, vrlo je lagan i dobar za duge uspone.";
+
+            Bicikla.BiciklaUPonudi.Add(b1);
+            Bicikla.BiciklaUPonudi.Add(b2);
+            Bicikla.BiciklaUPonudi.Add(b3);
+            Bicikla.BiciklaUPonudi.Add(b4);
+            Bicikla.BiciklaUPonudi.Add(b5);
+
+        }
+
+        public void otvori(object parametar)
+        {
+            formaPrikazItema = new FormaPrikazItema(Parent.ZaposlenikLogovan, Parent.KlijentLogovan);
+            prikazItemaViewModel = new PrikazItemaViewModel();
+            formaPrikazItema.DataContext = prikazItemaViewModel;
+            prikazItemaViewModel.Glavna = this.Parent;
+            if (prikazItemaViewModel.CloseAction == null)
+                prikazItemaViewModel.CloseAction = new Action(() => formaPrikazItema.Close());
+            formaPrikazItema.Show();
         }
 
         public void povuciIzBazeBicikla()

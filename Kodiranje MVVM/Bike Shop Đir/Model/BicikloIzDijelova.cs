@@ -21,7 +21,7 @@ namespace Bike_Shop_Đir.Model
         {
             foreach (DioBicikla d in listaDijelova)
             {
-                this.CijenaUsluge += d.cijenaDijela;
+                this.CijenaUsluge += d.CijenaDijela;
             }
             return this.CijenaUsluge;
         }

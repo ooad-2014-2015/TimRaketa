@@ -8,10 +8,26 @@ namespace Bike_Shop_Đir.Model
 {
     public class BicikloPredefinisano : Biciklo
     {
-        string dodatniOpis { get; set; }
-        string nazivProizvodjaca { get; set; }
-        int godinaProizvodnje { get; set; }
-        float cijena { get; set; }
+        private string dodatniOpis;
+        public string DodatniOpis
+        {
+            get {return dodatniOpis; }
+            set {dodatniOpis = value; }
+        }
+
+        private string nazivProizvodjaca; 
+        public string NazivProizvodjaca
+        {
+            get { return nazivProizvodjaca; }
+            set { nazivProizvodjaca = value; }
+        }
+
+        private int godinaProizvodnje;
+        public int GodinaProizvodnje
+        {
+            get { return godinaProizvodnje; }
+            set { godinaProizvodnje = value; }
+        }
 
         public BicikloPredefinisano()
         {
@@ -20,7 +36,7 @@ namespace Bike_Shop_Đir.Model
 
         public override float izracunajCijenu()
         {
-            return cijena;
+            return CijenaUsluge;
         }
 
 

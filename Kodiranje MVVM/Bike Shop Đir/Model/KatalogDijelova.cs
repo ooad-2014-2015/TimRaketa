@@ -39,7 +39,7 @@ namespace Bike_Shop_Đir.Model
         void obrisiDio(string id)
         {
 
-            dijeloviUPonudi.Remove(dijeloviUPonudi.Single(x => x.idDijela == id));
+            dijeloviUPonudi.Remove(dijeloviUPonudi.Single(x => x.IDDijela == id));
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

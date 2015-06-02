@@ -14,6 +14,14 @@ namespace Bike_Shop_Đir.ViewModel
 {
     public class NarucivanjeServisViewModel : INotifyPropertyChanged
     {
+        private GlavnaFormaViewModel parent;
+        public GlavnaFormaViewModel Parent
+        {
+            get { return parent; }
+            set { parent = value; }
+        }
+        
+
         private Servis servis;
         public Servis Servis
         {
@@ -23,23 +31,34 @@ namespace Bike_Shop_Đir.ViewModel
 
         public ICommand Naruci { get; set; }
 
-        public NarucivanjeServisViewModel()
+        private string poruka;
+        public string Poruka
         {
+            get { return poruka; }
+            set
+            {
+                poruka = value;
+                OnPropertyChanged("Poruka");
+            }
+        }
+
+        public NarucivanjeServisViewModel(GlavnaFormaViewModel g)
+        {
+            Parent = g;
+            Poruka = "";
             servis = new Servis();
             Naruci = new RelayCommand(naruci);
         }
 
         public Action CloseAction { get; set; }
 
+
+
+
         public void naruci(object parametar)
         {
-            uBazu(servis);
-            CloseAction();
-        }
-
-        private void uBazu(Servis pServis)
-        {
-            //dodavanje novog servisa u bazu
+            Servis.upisiUBazu();
+            Poruka = "Rezervisali ste termin za servis!";
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

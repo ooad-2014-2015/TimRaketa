@@ -19,6 +19,13 @@ namespace Bike_Shop_Đir.ViewModel
             set { ture = value; OnPropertyChanged("Ture"); }
         }
 
+        private GlavnaFormaViewModel parent;
+        public GlavnaFormaViewModel Parent
+        {
+            get { return parent; }
+            set { parent = value; }
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged(string propertyName)
         {

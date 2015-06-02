@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Bike_Shop_Đir.BazaTableAdapters;
+//using Bike_Shop_Đir.BazaTableAdapters;
 using System.Collections.ObjectModel;
 using System.Data.Metadata.Edm;
 using System.Drawing;
@@ -13,12 +13,47 @@ namespace Bike_Shop_Đir.Model
 {
     public class DioBicikla
     {
-        public string idDijela { get; set; }
-        string nazivProizvodjaca { get; set; }
-        int godinaProizvodnje { get; set; }
-        string dodatniOpis { get; set; }
-        public float cijenaDijela { get; set; }
-        public Image slika_komponente { get; set; }       
+        private string idDijela;
+        public string IDDijela
+        {
+            get { return idDijela; }
+            set { idDijela = value; }
+        }
+
+        private string nazivProizvodjaca;
+        public string NazivProizvodjaca
+        {
+            get { return nazivProizvodjaca; }
+            set { nazivProizvodjaca = value; }
+        }
+
+        private int godinaProizvodnje;
+        public int GodinaProizvodnje
+        {
+            get { return godinaProizvodnje; }
+            set { godinaProizvodnje = value; }
+        }
+
+        private string dodatniOpis;
+        public string DodatniOpis
+        {
+            get { return dodatniOpis; }
+            set { dodatniOpis = value; }
+        }
+
+        private Image slikaKomponenete;
+        public Image SlikaKomponente
+        {
+            get { return slikaKomponenete; }
+            set { slikaKomponenete = value; }
+        }
+
+        private float cijenaDijela;
+        public float CijenaDijela
+        {
+            get { return cijenaDijela; }
+            set { cijenaDijela = 0; }
+        }
 
 
         public DioBicikla()
@@ -37,10 +72,10 @@ namespace Bike_Shop_Đir.Model
 
         public void staviKomponentu()
         {
-            KOMPONENTETableAdapter adapter = new KOMPONENTETableAdapter();
+         /*   KOMPONENTETableAdapter adapter = new KOMPONENTETableAdapter();
             byte[] slika = imageToByteArray(this.slika_komponente) ;
             adapter.Insert(this.idDijela,slika );
-            
+            */
 
         }
         
