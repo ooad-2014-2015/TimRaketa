@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,7 +9,7 @@ namespace Bike_Shop_Đir.Model
 {
     public class Tura : Usluga
     {
-        public enum TipTure { Gradska, Brdska, Mjesovita, Utrka }
+        public ObservableCollection<string> TipoviTure { get; set; }
 
         private string idTure;
         public string IDTure
@@ -21,25 +22,25 @@ namespace Bike_Shop_Đir.Model
         public string NazivTure
         {
             get { return nazivTure; }
-            set { nazivTure = value; }
+            set { nazivTure = value; OnPropertyChanged("NazivTure"); }
         }
 
         private float trajanje;
         public float Trajanje
         {
             get { return trajanje; }
-            set { trajanje = value; }
+            set { trajanje = value; OnPropertyChanged("Trajanje"); }
         }
 
         private float duzina;
         public float Duzina
         {
             get { return duzina; }
-            set { duzina = value; }
+            set { duzina = value; OnPropertyChanged("Duzina"); }
         }
 
-        private TipTure tipTure;
-        public TipTure TipTureI
+        private string tipTure;
+        public string TipTureI
         {
             get { return tipTure; }
             set { tipTure = value; }
@@ -76,6 +77,16 @@ namespace Bike_Shop_Đir.Model
         public Tura()
         {
             klijenti = new List<Klijent>();
+            TipoviTure = new ObservableCollection<string>();
+            TipoviTure.Add("Gradska");
+            TipoviTure.Add("Brdska");
+            TipoviTure.Add("Mjesovita");
+            TipoviTure.Add("Utrka");
+        }
+
+        public void dodajUBazu()
+        {
+            //bazaa
         }
 
         // sve metore "promijeni...." su mi upitne zelimo li ih

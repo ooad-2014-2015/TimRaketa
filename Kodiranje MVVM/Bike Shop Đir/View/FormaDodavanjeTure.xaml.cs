@@ -16,18 +16,14 @@ using System.Windows.Shapes;
 namespace Bike_Shop_Đir.View
 {
     /// <summary>
-    /// Interaction logic for FormaOdabirTure.xaml
+    /// Interaction logic for FormaDodavanjeTure.xaml
     /// </summary>
-    public partial class FormaOdabirTure : Window
+    public partial class FormaDodavanjeTure : Window
     {
-        public FormaOdabirTure(bool zaposlenik, bool klijent, GlavnaFormaViewModel g)
+        public FormaDodavanjeTure(OdabirTureViewModel f)
         {
-            if (zaposlenik)
-            {
-                button1.Visibility = System.Windows.Visibility.Visible;
-            }
             InitializeComponent();
-            DataContext = new OdabirTureViewModel(g);
+            DataContext = new DodavanjeTureViewModel(f);
         }
     }
 }

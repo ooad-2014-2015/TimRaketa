@@ -126,8 +126,8 @@ namespace Bike_Shop_Đir.ViewModel
         public void odabirTure(object parametar)
         {
             azuriraj();
-            formaOdabirTure = new FormaOdabirTure(zaposlenikLogovan, klijentLogovan);
-            odabirTureViewModel = new OdabirTureViewModel();
+            formaOdabirTure = new FormaOdabirTure(zaposlenikLogovan, klijentLogovan, this);
+            odabirTureViewModel = new OdabirTureViewModel(this);
             formaOdabirTure.DataContext = odabirTureViewModel;
             formaOdabirTure.Show();
         }

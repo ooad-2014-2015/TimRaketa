@@ -73,6 +73,10 @@
     <Compile Include="ViewModel\PrikazItemaViewModel.cs" />
     <Compile Include="ViewModel\RegistracijaViewModel.cs" />
     <Compile Include="ViewModel\RelayCommand.cs" />
+    <Compile Include="ViewModel\DodavanjeTureViewModel.cs" />
+    <Compile Include="View\FormaDodavanjeTure.xaml.cs">
+      <DependentUpon>FormaDodavanjeTure.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\FormaGlavnaView.xaml.cs">
       <DependentUpon>FormaGlavnaView.xaml</DependentUpon>
     </Compile>
@@ -99,6 +103,10 @@
     <Compile Include="Window1.xaml.cs">
       <DependentUpon>Window1.xaml</DependentUpon>
     </Compile>
+    <Page Include="View\FormaDodavanjeTure.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\FormaGlavnaView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

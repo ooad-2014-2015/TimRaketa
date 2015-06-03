@@ -1,0 +1,98 @@
+﻿<Window x:Class="Bike_Shop_Đir.View.FormaDodavanjeTure"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Dodavanje nove ture" Height="349.218" Width="314.662" WindowStartupLocation="CenterScreen">
+    <Grid Margin="0,0,2,-1" RenderTransformOrigin="0,0" OverridesDefaultStyle="True">
+        <Label Content="Unesite podatke o turi:" HorizontalAlignment="Left" Height="29" Margin="20,10,0,0" VerticalAlignment="Top" Width="165" FontSize="14" Background="Transparent" FontWeight="Bold">
+            <Label.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HighlightColorKey}}"/>
+            </Label.Foreground>
+        </Label>
+        <Label Content="Naziv ture:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,58,0,0" FontSize="14" Background="Transparent">
+            <Label.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HighlightColorKey}}"/>
+            </Label.Foreground>
+        </Label>
+        <Label Content="Duzina:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,89,0,0" FontSize="14" Background="Transparent">
+            <Label.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HighlightColorKey}}"/>
+            </Label.Foreground>
+        </Label>
+        <Label Content="Tezina:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,151,0,0" FontSize="14" Background="Transparent">
+            <Label.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HighlightColorKey}}"/>
+            </Label.Foreground>
+        </Label>
+        <Label Content="ID vodica:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,177,0,0" FontSize="14" Background="Transparent">
+            <Label.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HighlightColorKey}}"/>
+            </Label.Foreground>
+        </Label>
+        <Label Content="Tip ture:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,120,0,0" FontSize="14" Background="Transparent">
+            <Label.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HighlightColorKey}}"/>
+            </Label.Foreground>
+        </Label>
+        <Label Content="km" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="229,89,0,0" FontSize="14">
+            <Label.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HighlightColorKey}}"/>
+            </Label.Foreground>
+        </Label>
+        <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" 
+                 Text="{Binding NovaTura.NazivTure, Mode=TwoWay}" VerticalAlignment="Top" Width="120" Margin="104,61,0,0"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="104,89,0,0" TextWrapping="Wrap" 
+                 Text="{Binding NovaTura.Duzina, Mode=TwoWay}" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="104,180,0,0" TextWrapping="Wrap" 
+                 Text="{Binding NovaTura.Zaposlenik.IdZaposlenika, Mode=TwoWay}" VerticalAlignment="Top" Width="120"/>
+        <ComboBox HorizontalAlignment="Left" Height="26" Margin="104,120,0,0" 
+                  VerticalAlignment="Top" Width="120"
+                  ItemsSource="{Binding NovaTura.TipoviTure}"
+                  SelectedValue="{Binding NovaTura.TipTure, Mode=TwoWay}">
+            <ComboBox.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HighlightColorKey}}"/>
+            </ComboBox.Foreground>
+        </ComboBox>
+        <Slider x:Name="Slajder" HorizontalAlignment="Left" VerticalAlignment="Top" 
+                Margin="104,151,0,0" Width="120" IsManipulationEnabled="True" 
+                AutoToolTipPlacement="TopLeft" Minimum="1" SmallChange="1"
+                Value="{Binding Tura.TezinaTure, Mode=TwoWay}">
+            <Slider.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HighlightColorKey}}"/>
+            </Slider.Foreground>
+        </Slider>
+        <TextBlock HorizontalAlignment="Left" Height="22" Margin="232,151,0,0" TextWrapping="Wrap" 
+                   Text="{Binding ElementName=Slajder, Path=Value, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="26" FontSize="14">
+            <TextBlock.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HighlightColorKey}}"/>
+            </TextBlock.Foreground>
+        </TextBlock>
+
+        <Label Content="Trajanje:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,208,0,0" FontSize="14" Background="Transparent">
+            <Label.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HighlightColorKey}}"/>
+            </Label.Foreground>
+        </Label>
+        <Button Content="Dodaj turu" HorizontalAlignment="Left" Height="30" Margin="91,250,0,0"
+                VerticalAlignment="Top" Width="133" FontSize="14" FontWeight="Bold"
+                Command="{Binding Path= DodajTuru}">
+            <Button.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.MenuHighlightColorKey}}"/>
+            </Button.Foreground>
+        </Button>
+        <TextBlock HorizontalAlignment="Left" Height="25" Margin="55,285,0,0" TextWrapping="Wrap" 
+                   Text="{Binding TekstPoruke, Mode=TwoWay}" VerticalAlignment="Top" Width="203" Foreground="#FF028708" FontSize="14" FontWeight="Bold" TextAlignment="Center"/>
+        
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="104,214,0,0" TextWrapping="Wrap" 
+        	Text="{Binding NovaTura.Trajanje, Mode=TwoWay}" VerticalAlignment="Top" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Height="22" Margin="232,215,0,0" TextWrapping="Wrap" 
+        	Text="min" VerticalAlignment="Top" 
+                   Width="26" FontSize="14">
+            <TextBlock.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HighlightColorKey}}"/>
+            </TextBlock.Foreground>
+        </TextBlock>
+
+
+
+    </Grid>
+</Window>
