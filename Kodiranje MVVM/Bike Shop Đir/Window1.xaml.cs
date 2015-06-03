@@ -16,6 +16,8 @@ using BarcodeLib.BarcodeReader;
 using System.IO;
 using System.ComponentModel;
 using System.Windows.Input;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace WPFCSharpWebCam
 {
@@ -31,6 +33,7 @@ namespace WPFCSharpWebCam
         }
 
         WebCam webcam;
+        
         private void mainWindow_Loaded(object sender, System.Windows.RoutedEventArgs e)
         {
         	// TODO: Add event handler implementation here.
@@ -76,39 +79,54 @@ namespace WPFCSharpWebCam
             webcam.AdvanceSetting();
         }
 
-        private void QR_Click(object sender, RoutedEventArgs e)
+        private  async void QR_Click(object sender, RoutedEventArgs e)
         {
             FolderBrowserDialog dialog = new FolderBrowserDialog();
-            string poruka="nesto";
+            string poruka= "sfda";
+            try
+            {
             if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                
-                try
-                {
-                    string[] nadjeni = Directory.GetFiles(dialog.SelectedPath, "*.png", SearchOption.AllDirectories);
-                    string[] slika = BarcodeReader.read(nadjeni[0], BarcodeReader.QRCODE);
-                    qrText.Text = slika[0];
-                }
-                catch (IndexOutOfRangeException)
-                {
-                    poruka = "prazno";
-                   
-                }
 
-
-                if (poruka != "prazno")
-                {
-                    tekstblok.Text = "Vaš QR kod je tačan.";
-                    tekstblok.Foreground = new SolidColorBrush(Colors.ForestGreen);
-                }
-                else
-                {
-                    tekstblok.Text = "Login nije uspio";
-                    tekstblok.Foreground = new SolidColorBrush(Colors.Red);
-                }
-                
+                /*Thread pretraga = new Thread(() => Pretraga(dialog.SelectedPath));
+                    pretraga.IsBackground=true;
+                    pretraga.Start();*/
+                await Pretraga(dialog.SelectedPath);
+                    
             }
+               
+            }
+            catch (IndexOutOfRangeException)
+            {
+                poruka = "prazno";
+
+            }
+
+            if (poruka != "prazno")
+            {
+                tekstblok.Text = "Vaš QR kod je tačan.";
+                tekstblok.Foreground = new SolidColorBrush(Colors.ForestGreen);
+            }
+            else
+            {
+                tekstblok.Text = "Login nije uspio";
+                tekstblok.Foreground = new SolidColorBrush(Colors.Red);
+            }
+                
             
         }
+
+        public async Task Pretraga(string putanja)
+        {
+            string[] nadjeni = Directory.GetFiles(putanja, "*.png   ", SearchOption.AllDirectories);
+            string[] slika = BarcodeReader.read(nadjeni[0], BarcodeReader.QRCODE);
+            await Task.Delay(2000);
+            qrText.Text = slika[0];
+            
+            
+        }
+       
+
+         
     }
 }
