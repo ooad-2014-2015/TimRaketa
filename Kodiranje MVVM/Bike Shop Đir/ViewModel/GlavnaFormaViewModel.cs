@@ -4,9 +4,11 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 using bsd = Bike_Shop_Đir;
 
@@ -18,6 +20,7 @@ namespace Bike_Shop_Đir.ViewModel
         public ICommand OdabirBicikla { get; set; }
         public ICommand OdabirTure { get; set; }
         public ICommand NarucivanjeServis { get; set; }
+        public ICommand Help { get; set; }
 
         private bool zaposlenikLogovan;
         public bool ZaposlenikLogovan
@@ -104,8 +107,16 @@ namespace Bike_Shop_Đir.ViewModel
             RegistracijaILogovanje = new RelayCommand(registracijaILogovanjeKlik);
             OdabirBicikla = new RelayCommand(odabirBicikla);
             OdabirTure = new RelayCommand(odabirTure);
-            NarucivanjeServis = new RelayCommand(narucivanjeServis);    
+            NarucivanjeServis = new RelayCommand(narucivanjeServis);
+            Help = new RelayCommand(helpKlik);
         }
+
+        public void helpKlik(object parameter)
+        {
+            FormaHelp fh = new FormaHelp();
+            fh.Visibility = Visibility.Visible;
+        }
+
 
         public void registracijaILogovanjeKlik(object parametar)
         {

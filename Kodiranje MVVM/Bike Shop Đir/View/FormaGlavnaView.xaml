@@ -1,8 +1,8 @@
 ﻿<Window x:Class="Bike_Shop_Đir.View.FormaGlavnaView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Bike Shop Đir" Height="534.5" Width="900" WindowStartupLocation="CenterScreen" ResizeMode="CanResize">
-    <Grid Margin="0,0,-8,0">
+        Title="Bike Shop Đir" Height="607.634" Width="900" WindowStartupLocation="CenterScreen" ResizeMode="CanResize">
+    <Grid Margin="0,0,-8,0" Height="518" VerticalAlignment="Top">
         <Grid.RowDefinitions>
             <RowDefinition Height="250"/>
             <RowDefinition Height="*"/>
@@ -19,7 +19,7 @@
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.MenuHighlightColorKey}}"/>
             </Button.Foreground>
         </Button>
-        <Button Name="dugmeBiciklo" Grid.Row="0" HorizontalAlignment="Left" Height="230" VerticalAlignment="Top" Width="420" Margin="10,10,0,0" Grid.Column="1" FontSize="20" BorderBrush="{x:Null}" FontFamily="Ravie" FontWeight="Bold" Click="dugmeBiciklo_Click" Command="{Binding Path=OdabirBicikla}">
+        <Button Name="dugmeBiciklo" Grid.Row="0" HorizontalAlignment="Left" Height="230" VerticalAlignment="Top" Width="420" Margin="10,10,0,0" Grid.Column="1" FontSize="20" BorderBrush="{x:Null}" FontFamily="Ravie" FontWeight="Bold" Command="{Binding Path=OdabirBicikla}">
             <Button.Background>
                 <ImageBrush ImageSource="pospok.jpg" Stretch="Uniform"/>
             </Button.Background>
@@ -44,6 +44,11 @@
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.MenuHighlightColorKey}}"/>
             </Button.Foreground>
         </Button>
-
+        <Grid Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="0,245,0,-59" Grid.Row="1" Width="890"/>
+        <Button  Command="{Binding Path=Help}" Grid.ColumnSpan="2" Content="Help dokument" HorizontalAlignment="Left" Height="82" Margin="0,245,0,-59" Grid.Row="1" VerticalAlignment="Top" Width="890" FontSize="20" FontWeight="Bold" FontFamily="Ravie" Background="{x:Null}" BorderBrush="{x:Null}" >
+        <Button.Foreground>
+            <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.MenuHighlightColorKey}}"/>
+        </Button.Foreground>
+        </Button>
     </Grid>
 </Window>
