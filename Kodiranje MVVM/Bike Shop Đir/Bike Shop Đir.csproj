@@ -71,6 +71,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Baza.cs">
+      <DependentUpon>Baza.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Baza.Designer.cs">
+      <DependentUpon>Baza.cs</DependentUpon>
+    </Compile>
     <Compile Include="Helper.cs" />
     <Compile Include="ViewModel\GlavnaFormaViewModel.cs" />
     <Compile Include="ViewModel\NarucivanjeServisViewModel.cs" />
@@ -184,6 +191,13 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <None Include="Baza.xsc">
+      <DependentUpon>Baza.xsd</DependentUpon>
+    </None>
+    <None Include="Baza.xsd" />
+    <None Include="Baza.xss">
+      <DependentUpon>Baza.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
