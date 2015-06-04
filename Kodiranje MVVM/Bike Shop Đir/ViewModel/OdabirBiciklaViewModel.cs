@@ -5,6 +5,9 @@ using System.Windows.Input;
 using System.ComponentModel;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
 using Bike_Shop_Đir.Model;
 using Bike_Shop_Đir.View;
 

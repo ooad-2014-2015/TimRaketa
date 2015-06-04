@@ -38,6 +38,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Resources\BarcodeLib.BarcodeReader.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Expression.Blend, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=x86" />
+    <Reference Include="Microsoft.Expression.Prototyping.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Windows.Design.Interaction, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="ReachFramework" />
@@ -50,6 +52,7 @@
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -71,13 +74,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Baza.cs">
-      <DependentUpon>Baza.xsd</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Baza.Designer.cs">
-      <DependentUpon>Baza.cs</DependentUpon>
-    </Compile>
     <Compile Include="Helper.cs" />
     <Compile Include="ViewModel\GlavnaFormaViewModel.cs" />
     <Compile Include="ViewModel\NarucivanjeServisViewModel.cs" />
@@ -191,13 +187,6 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <None Include="Baza.xsc">
-      <DependentUpon>Baza.xsd</DependentUpon>
-    </None>
-    <None Include="Baza.xsd" />
-    <None Include="Baza.xss">
-      <DependentUpon>Baza.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

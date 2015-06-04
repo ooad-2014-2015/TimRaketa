@@ -20,19 +20,20 @@ namespace Bike_Shop_Đir.View
     /// </summary>
     public partial class FormaOdabirBicikla : Window
     {
-        public FormaOdabirBicikla(bool zaposlenik, bool klijent)
+        bool zaposlenik;
+        bool klijent;
+
+        public FormaOdabirBicikla(bool pzaposlenik, bool pklijent)
         {
-            if(zaposlenik)
+            zaposlenik = pzaposlenik;
+            klijent = pklijent;
+            if(pzaposlenik)
             {
                 button1.Visibility = System.Windows.Visibility.Visible;
                 button2.Visibility = System.Windows.Visibility.Visible;
             }
             InitializeComponent();
         }
-
-        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-           
-        }
+  
     }
 }
