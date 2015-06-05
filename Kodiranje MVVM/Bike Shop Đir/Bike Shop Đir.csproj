@@ -78,7 +78,11 @@
     <Compile Include="ViewModel\NarucivanjeServisViewModel.cs" />
     <Compile Include="ViewModel\OdabirBiciklaViewModel.cs" />
     <Compile Include="ViewModel\OdabirTureViewModel.cs" />
+    <Compile Include="ViewModel\PrikazDijelaViewModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="ViewModel\PrikazItemaViewModel.cs" />
+    <Compile Include="ViewModel\PrikazTureViewModel.cs" />
     <Compile Include="ViewModel\RegistracijaViewModel.cs" />
     <Compile Include="ViewModel\RelayCommand.cs" />
     <Compile Include="ViewModel\DodavanjeTureViewModel.cs" />
@@ -103,8 +107,14 @@
     <Compile Include="View\FormaOdabirTure.xaml.cs">
       <DependentUpon>FormaOdabirTure.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\FormaPrikazDijela.xaml.cs">
+      <DependentUpon>FormaPrikazDijela.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\FormaPrikazItema.xaml.cs">
       <DependentUpon>FormaPrikazItema.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormaPrikazTure.xaml.cs">
+      <DependentUpon>FormaPrikazTure.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\FormaRegistracijaILoginView.xaml.cs">
       <DependentUpon>FormaRegistracijaILoginView.xaml</DependentUpon>
@@ -146,9 +156,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="View\FormaPrikazDijela.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\FormaPrikazItema.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\FormaPrikazTure.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\FormaRegistracijaILoginView.xaml">
       <SubType>Designer</SubType>

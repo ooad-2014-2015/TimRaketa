@@ -15,13 +15,12 @@ using System.Windows.Shapes;
 namespace Bike_Shop_Đir.View
 {
     /// <summary>
-    /// Interaction logic for FormaPrikazItema.xaml
+    /// Interaction logic for FormaPrikazTure.xaml
     /// </summary>
-    public partial class FormaPrikazItema : Window
+    public partial class FormaPrikazTure : Window
     {
-        public FormaPrikazItema()
+        public FormaPrikazTure()
         {
-   
             InitializeComponent();
         }
     }

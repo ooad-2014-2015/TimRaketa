@@ -1,0 +1,28 @@
+﻿<Window x:Class="Bike_Shop_Đir.View.FormaPrikazDijela"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="FormaPrikazDijela" Height="365" Width="383">
+    <Grid>
+        <Image HorizontalAlignment="Left" Height="170" Margin="10,10,0,0" VerticalAlignment="Top" Width="356" DataContext="{Binding Path=Dio.SlikaKomponente}"/>
+        <Label Content="Naziv:" HorizontalAlignment="Left" Margin="10,185,0,0" VerticalAlignment="Top" FontSize="18" RenderTransformOrigin="0.776,1.088">
+            <Label.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HighlightColorKey}}"/>
+            </Label.Foreground>
+        </Label>
+        <Label Content="Cijena:" HorizontalAlignment="Left" Margin="219,185,0,0" VerticalAlignment="Top" FontSize="18">
+            <Label.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HighlightColorKey}}"/>
+            </Label.Foreground>
+        </Label>
+        <Label Content="Opis:" HorizontalAlignment="Left" Margin="10,208,0,0" VerticalAlignment="Top" FontSize="18">
+            <Label.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HighlightColorKey}}"/>
+            </Label.Foreground>
+        </Label>
+        <TextBlock HorizontalAlignment="Left" Margin="73,195,0,0" TextWrapping="Wrap" Text="{Binding Dio.IDDijela}" VerticalAlignment="Top" Width="110" Height="21"/>
+        <TextBlock HorizontalAlignment="Left" Margin="287,195,0,0" TextWrapping="Wrap" Text="{Binding Dio.CijenaDijela}" VerticalAlignment="Top" Width="59" Height="21"/>
+        <TextBlock HorizontalAlignment="Left" Margin="15,242,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="351" Height="57"><Run Text="{Binding Dio.DodatniOpis}"/><Run Text=""/></TextBlock>
+        <Button x:Name="button2" Content="Kupi" HorizontalAlignment="Left" Margin="287,304,0,0" VerticalAlignment="Top" Width="75" IsManipulationEnabled="True" Command="{Binding Kupi}"/>
+
+    </Grid>
+</Window>

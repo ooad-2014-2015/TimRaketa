@@ -8,6 +8,8 @@ using Bike_Shop_Đir.View;
 using System.Windows.Input;
 using System.ComponentModel;
 using System.Windows;
+using Bike_Shop_Đir.View;
+using Bike_Shop_Đir.Model;
 
 namespace Bike_Shop_Đir.ViewModel
 {
@@ -51,10 +53,24 @@ namespace Bike_Shop_Đir.ViewModel
             set { turaOdabrana = value; }
         }
 
-
-        public OdabirTureViewModel(GlavnaFormaViewModel g)
+        private FormaPrikazTure formaPrikazTure;
+        public FormaPrikazTure FormaPrikazTure
         {
-            Parent = g;
+            get { return formaPrikazTure; }
+            set { formaPrikazTure = value; }
+        }
+
+        private PrikazTureViewModel prikazTureViewModel;
+        public PrikazTureViewModel PrikazTureViewModel
+        {
+            get { return prikazTureViewModel; }
+            set { prikazTureViewModel = value; }
+        }
+
+        public OdabirTureViewModel()
+        {
+            ture = new KatalogTura();
+            napuni();
             turaOdabrana = null;
             DodajNovu = new RelayCommand(dodajNovu);
             OdabirTure = new RelayCommand(odabirTure);
@@ -72,6 +88,26 @@ namespace Bike_Shop_Đir.ViewModel
             //dodavanje selektovane ture u korpu...
 
             TekstPoruke = "Prijavili ste se!";
+        }
+
+        public void otvori(Tura pTura)
+        {
+            formaPrikazTure = new FormaPrikazTure();
+            prikazTureViewModel = new PrikazTureViewModel(pTura);
+            formaPrikazTure.DataContext = prikazTureViewModel;
+            if (prikazTureViewModel.CloseAction == null)
+                prikazTureViewModel.CloseAction = new Action(() => formaPrikazTure.Close());
+            formaPrikazTure.Show();
+        }
+
+        //ova funkcija služi samo simulacije radi...kad povežemo sa bazom ona će biti obrisana
+        public void napuni()
+        {
+            Tura t1 = new Tura();
+            t1.IDTure = "Sarajevo-Trebevic";
+            t1.Duzina = 50;
+            t1.Trajanje = 5;
+            Ture.TureUPonudi.Add(t1);
         }
 
 

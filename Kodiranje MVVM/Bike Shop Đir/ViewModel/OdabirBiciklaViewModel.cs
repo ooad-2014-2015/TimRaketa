@@ -50,13 +50,28 @@ namespace Bike_Shop_Đir.ViewModel
             set { parent = value; }
         }
 
+        private FormaPrikazDijela formaPrikazDijela;
+        public FormaPrikazDijela FormaPrikazDijela
+        {
+            get { return formaPrikazDijela; }
+            set { formaPrikazDijela = value; }
+        }
+
+        private PrikazDijelaViewModel prikazDijelaViewModel;
+        public PrikazDijelaViewModel PrikazDijelaViewModel
+        {
+            get { return prikazDijelaViewModel; }
+            set { prikazDijelaViewModel = value; }
+        }
+
+
         public ICommand Otvori { get; set; }
 
         public OdabirBiciklaViewModel()
         {
             bicikla = new KatalogBicikala();
             dijelovi = new KatalogDijelova();
-            Otvori = new RelayCommand(otvori);
+            //Otvori = new RelayCommand(otvori);
             napuni();
             povuciIzBazeBicikla();
             povuciIzBazeDijelove();
@@ -71,11 +86,15 @@ namespace Bike_Shop_Đir.ViewModel
             BicikloPredefinisano b4 = new BicikloPredefinisano();
             BicikloPredefinisano b5 = new BicikloPredefinisano();
 
+            DioBicikla d1 = new DioBicikla();
+
             b1.IDBicikla = "Scott Voltage";
             b2.IDBicikla = "GT 2.0";
             b3.IDBicikla = "CUBE Acid";
             b4.IDBicikla = "Canyon Grand";
             b5.IDBicikla = "Wichita Unit XT";
+
+            d1.IDDijela = "Fox amortizer";
 
             b1.CijenaUsluge = 850;
             b2.CijenaUsluge = 600;
@@ -83,11 +102,15 @@ namespace Bike_Shop_Đir.ViewModel
             b4.CijenaUsluge = 1500;
             b5.CijenaUsluge = 1500;
 
+            d1.CijenaDijela = 600;
+
             b1.DodatniOpis = "Ovaj bicikl je odličan za brdsku vožnju jer ima ojačanu opremu. \nTakođer, vrlo je lagan i dobar za duge uspone.";
             b2.DodatniOpis = "Ovaj bicikl je odličan za brdsku vožnju jer ima ojačanu opremu. \nTakođer, vrlo je lagan i dobar za duge uspone.";
             b3.DodatniOpis = "Ovaj bicikl je odličan za brdsku vožnju jer ima ojačanu opremu. \nTakođer, vrlo je lagan i dobar za duge uspone.";
             b4.DodatniOpis = "Ovaj bicikl je odličan za brdsku vožnju jer ima ojačanu opremu. \nTakođer, vrlo je lagan i dobar za duge uspone.";
             b5.DodatniOpis = "Ovaj bicikl je odličan za brdsku vožnju jer ima ojačanu opremu. \nTakođer, vrlo je lagan i dobar za duge uspone.";
+
+            d1.DodatniOpis = "Ovaj amortizer ima hod od 120 mm i veoma je izdržljiv.";
 
             Bicikla.BiciklaUPonudi.Add(b1);
             Bicikla.BiciklaUPonudi.Add(b2);
@@ -95,17 +118,29 @@ namespace Bike_Shop_Đir.ViewModel
             Bicikla.BiciklaUPonudi.Add(b4);
             Bicikla.BiciklaUPonudi.Add(b5);
 
+            Dijelovi.DijeloviUPonudi.Add(d1);
+
         }
 
-        public void otvori(object parameter)
+        public void otvori(BicikloPredefinisano pBajk)
         {
-            formaPrikazItema = new FormaPrikazItema(Parent.ZaposlenikLogovan, Parent.KlijentLogovan);
-            prikazItemaViewModel = new PrikazItemaViewModel();
+            formaPrikazItema = new FormaPrikazItema();
+            prikazItemaViewModel = new PrikazItemaViewModel(pBajk);
             formaPrikazItema.DataContext = prikazItemaViewModel;
             prikazItemaViewModel.Glavna = this.Parent;
             if (prikazItemaViewModel.CloseAction == null)
                 prikazItemaViewModel.CloseAction = new Action(() => formaPrikazItema.Close());
             formaPrikazItema.Show();
+        }
+
+        public void otvoriDio(DioBicikla pDio)
+        {
+            formaPrikazDijela = new FormaPrikazDijela();
+            prikazDijelaViewModel = new PrikazDijelaViewModel(pDio);
+            formaPrikazDijela.DataContext = prikazDijelaViewModel;
+            if (prikazDijelaViewModel.CloseAction == null)
+                prikazDijelaViewModel.CloseAction = new Action(() => formaPrikazDijela.Close());
+            formaPrikazDijela.Show();
         }
 
         public void povuciIzBazeBicikla()
