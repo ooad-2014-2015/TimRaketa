@@ -10,7 +10,7 @@
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HighlightColorKey}}"/>
             </Label.Foreground>
         </Label>
-        <Label Content="Naziv proizvođaća:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="23,51,0,0" Height="28" Width="116" FontSize="13">
+        <Label Content="Naziv proizvođača:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="23,51,0,0" Height="28" Width="116" FontSize="13">
             <Label.Foreground>
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HighlightColorKey}}"/>
             </Label.Foreground>
