@@ -16,16 +16,14 @@ using Bike_Shop_Đir.ViewModel;
 namespace Bike_Shop_Đir.View
 {
     /// <summary>
-    /// Interaction logic for FormaGlavnaView.xaml
+    /// Interaction logic for FormaDodavanjeBicikla.xaml
     /// </summary>
-    public partial class FormaGlavnaView : Window
+    public partial class FormaDodavanjeBicikla : Window
     {
-        public FormaGlavnaView()
+        public FormaDodavanjeBicikla()
         {
             InitializeComponent();
-            DataContext = new GlavnaFormaViewModel();
+            DataContext = new DodavanjeBiciklaViewModel();
         }
-
-
     }
 }

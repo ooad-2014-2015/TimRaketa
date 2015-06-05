@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Input;
 using System.ComponentModel;
+using System.Windows.Input;
 using Bike_Shop_Đir.Model;
 using Bike_Shop_Đir.View;
 
 namespace Bike_Shop_Đir.ViewModel
 {
-    public class PrikazItemaViewModel
+    public class PrikazDijelaViewModel
     {
         private GlavnaFormaViewModel glavna;
         public GlavnaFormaViewModel Glavna
@@ -19,19 +19,19 @@ namespace Bike_Shop_Đir.ViewModel
             set { glavna = value; }
         }
 
-        private BicikloPredefinisano bajk;
-        public BicikloPredefinisano Bajk
+        private  DioBicikla dio;
+        public   DioBicikla Dio
         {
-            get { return bajk; }
-            set { bajk = value; }
+            get { return dio; }
+            set { dio = value; }
         }
 
         public ICommand Kupi { get; set; }
         public ICommand Brisi { get; set; }
 
-        public PrikazItemaViewModel(BicikloPredefinisano pBajk)
+        public PrikazDijelaViewModel(DioBicikla pDio)
         {
-            bajk = pBajk;
+            dio = pDio;
             Kupi = new RelayCommand(kupi);
             Brisi = new RelayCommand(brisi);
         }
@@ -47,6 +47,5 @@ namespace Bike_Shop_Đir.ViewModel
         {
 
         }
-
     }
 }

@@ -38,8 +38,11 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Resources\BarcodeLib.BarcodeReader.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Expression.Blend, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=x86" />
+    <Reference Include="Microsoft.Expression.Prototyping.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Windows.Design.Interaction, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="ReachFramework" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
@@ -48,7 +51,11 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Windows" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.interactivity">
+      <HintPath>C:\Program Files (x86)\NVIDIA Corporation\NVIDIA GeForce Experience\System.Windows.interactivity.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -70,27 +77,31 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Baza.cs">
-      <DependentUpon>Baza.xsd</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Baza.Designer.cs">
-      <DependentUpon>Baza.cs</DependentUpon>
-    </Compile>
     <Compile Include="Helper.cs" />
+    <Compile Include="ViewModel\DodavanjeBiciklaViewModel.cs" />
     <Compile Include="ViewModel\GlavnaFormaViewModel.cs" />
     <Compile Include="ViewModel\NarucivanjeServisViewModel.cs" />
     <Compile Include="ViewModel\OdabirBiciklaViewModel.cs" />
     <Compile Include="ViewModel\OdabirTureViewModel.cs" />
+    <Compile Include="ViewModel\PrikazDijelaViewModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="ViewModel\PrikazItemaViewModel.cs" />
+    <Compile Include="ViewModel\PrikazTureViewModel.cs" />
     <Compile Include="ViewModel\RegistracijaViewModel.cs" />
     <Compile Include="ViewModel\RelayCommand.cs" />
     <Compile Include="ViewModel\DodavanjeTureViewModel.cs" />
+    <Compile Include="View\FormaDodavanjeBicikla.xaml.cs">
+      <DependentUpon>FormaDodavanjeBicikla.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\FormaDodavanjeTure.xaml.cs">
       <DependentUpon>FormaDodavanjeTure.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\FormaGlavnaView.xaml.cs">
       <DependentUpon>FormaGlavnaView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormaHelp.xaml.cs">
+      <DependentUpon>FormaHelp.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\FormaNarucivanjeServis.xaml.cs">
       <DependentUpon>FormaNarucivanjeServis.xaml</DependentUpon>
@@ -101,8 +112,14 @@
     <Compile Include="View\FormaOdabirTure.xaml.cs">
       <DependentUpon>FormaOdabirTure.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\FormaPrikazDijela.xaml.cs">
+      <DependentUpon>FormaPrikazDijela.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\FormaPrikazItema.xaml.cs">
       <DependentUpon>FormaPrikazItema.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormaPrikazTure.xaml.cs">
+      <DependentUpon>FormaPrikazTure.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\FormaRegistracijaILoginView.xaml.cs">
       <DependentUpon>FormaRegistracijaILoginView.xaml</DependentUpon>
@@ -111,15 +128,24 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ViewModel\HelpViewModel.cs" />
     <Compile Include="WebCam.cs" />
     <Compile Include="Window1.xaml.cs">
       <DependentUpon>Window1.xaml</DependentUpon>
     </Compile>
+    <Page Include="View\FormaDodavanjeBicikla.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\FormaDodavanjeTure.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\FormaGlavnaView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\FormaHelp.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -135,9 +161,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="View\FormaPrikazDijela.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\FormaPrikazItema.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\FormaPrikazTure.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\FormaRegistracijaILoginView.xaml">
       <SubType>Designer</SubType>
@@ -182,15 +216,6 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <None Include="Baza.xsc">
-      <DependentUpon>Baza.xsd</DependentUpon>
-    </None>
-    <None Include="Baza.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Baza.xss">
-      <DependentUpon>Baza.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -201,6 +226,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\HELP.xps" />
     <None Include="View\slika.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -220,9 +246,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

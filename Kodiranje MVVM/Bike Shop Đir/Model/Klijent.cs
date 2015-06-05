@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Bike_Shop_Đir.Model
 {
     // Upitno mi je jesmo li trebali razdvojiti kreditnu karticu kao zasebnu klasu...
-    public class Klijent : Osoba
+    public class Klijent : Osoba, IDataErrorInfo
     {
         private string userName;
 
@@ -32,7 +32,7 @@ namespace Bike_Shop_Đir.Model
         public int BrojKartice
         {
             get { return brojKartice; }
-            set { brojKartice = value; }
+            set { brojKartice = value; OnPropertyChanged("BrojKartice"); }
         }
 
         public Klijent()
@@ -69,6 +69,114 @@ namespace Bike_Shop_Đir.Model
             return;
         }
 
+        //ovdje počinje validacija
+        /// >>>>>>>>>>>>
+        /// >>>>>>>>>>>>
+        /// >>>>>>>>>>>>
+        
+        private string validirajDatum()
+        {
+            //Test za datum
+            if (DatumRodjenja >= DateTime.Now)
+            {
+                return "Unesite datum u prošlosti!";
+            }
+            return null;
+        }
 
+        private string validirajIme()
+        {
+            //Prvo gleda jel vrijednost uopste poputnjena
+            if (String.IsNullOrWhiteSpace(Ime))
+            {
+                return "Ime mora biti uneseno!";
+            }
+
+            if (Ime.Length < 2)
+            {
+                return "Ime prekratko";
+            }
+            return null;
+        }
+
+        private string validirajPrezime()
+        {
+            //Prvo gleda jel vrijednost uopste poputnjena
+            if (String.IsNullOrWhiteSpace(Prezime))
+            {
+                return "Prezime mora biti uneseno!";
+            }
+
+            if (Prezime.Length < 2)
+            {
+                return "Prezime prekratko";
+            }
+            return null;
+        }
+
+        private string validirajBroj()
+        {
+            if (String.IsNullOrWhiteSpace(BrojKartice.ToString()))
+            {
+                return "Broj kreditne kartice mora biti unesen!";
+            }
+            if (BrojKartice.ToString().Length < 8 || BrojKartice.ToString().Length > 10)
+            {
+                return "Broj kreditne kartice ne postoji!";
+            }
+            return null;
+        }
+
+        string getValidationError(string propertyName)
+        {
+            string error = null;
+            switch (propertyName)
+            {
+                case "DatumRodjenja":
+                    error = validirajDatum();
+                    break;
+                case "Ime":
+                    error = validirajIme();
+                    break;
+                case "Prezime":
+                    error = validirajPrezime();
+                    break;
+                case "BrojKartice":
+                    error = validirajBroj();
+                    break;
+
+            }
+            return error;
+        }
+
+        string IDataErrorInfo.this[string propertyName]
+        {
+            get { return getValidationError(propertyName); }
+        }
+
+        string IDataErrorInfo.Error
+        {
+            get { return null; }
+        }
+
+        static readonly string[] validateProperties =
+        {
+            "DatumRodjenja","Ime","Prezime","BrojKartice"
+        };
+
+        public bool IsValid
+        {
+            get
+            {
+                foreach (string property in validateProperties)
+                {
+                    if (getValidationError(property) != null)
+                    {
+                        return false;
+                    }
+                }
+                return true;
+            }
+        }
     }
 }

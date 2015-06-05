@@ -11,21 +11,17 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using Bike_Shop_Đir.ViewModel;
 
 namespace Bike_Shop_Đir.View
 {
     /// <summary>
-    /// Interaction logic for FormaGlavnaView.xaml
+    /// Interaction logic for FormaPrikazTure.xaml
     /// </summary>
-    public partial class FormaGlavnaView : Window
+    public partial class FormaPrikazTure : Window
     {
-        public FormaGlavnaView()
+        public FormaPrikazTure()
         {
             InitializeComponent();
-            DataContext = new GlavnaFormaViewModel();
         }
-
-
     }
 }

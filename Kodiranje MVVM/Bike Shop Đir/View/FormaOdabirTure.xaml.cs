@@ -1,4 +1,5 @@
 ﻿using Bike_Shop_Đir.ViewModel;
+using Bike_Shop_Đir.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,6 +21,13 @@ namespace Bike_Shop_Đir.View
     /// </summary>
     public partial class FormaOdabirTure : Window
     {
+        private OdabirTureViewModel Ot;
+        public OdabirTureViewModel OT
+        {
+            get { return Ot; }
+            set { Ot = value; }
+        }
+
         public FormaOdabirTure(bool zaposlenik, bool klijent, GlavnaFormaViewModel g)
         {
             if (zaposlenik)
@@ -27,7 +35,14 @@ namespace Bike_Shop_Đir.View
                 button1.Visibility = System.Windows.Visibility.Visible;
             }
             InitializeComponent();
-            DataContext = new OdabirTureViewModel(g);
+            Ot = new OdabirTureViewModel();
+            DataContext = Ot;
+        }
+
+        private void DataGrid_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
+        {
+            int indeks = datagrid1.SelectedIndex;
+            Ot.otvori(Ot.Ture.TureUPonudi[indeks]);
         }
     }
 }

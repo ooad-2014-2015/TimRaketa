@@ -114,12 +114,20 @@ namespace Bike_Shop_Đir.ViewModel
 
         public void registracijaKlik (object parameter)
         {
-            NoviKlijent.upisiUBazu();
+            if (NoviKlijent.IsValid)
+            {
+                NoviKlijent.upisiUBazu();
 
-            PorukaGreske2 = "Uspjesno ste registrovani!";
-            BojaGreske = "Zelena";
-            VidljivaGreska2 = Visibility.Visible;
-            Parent.NoviKlijent = this.NoviKlijent;
+                PorukaGreske2 = "Uspjesno ste registrovani!";
+                BojaGreske = "Zelena";
+                VidljivaGreska2 = Visibility.Visible;
+                Parent.NoviKlijent = this.NoviKlijent;
+            }
+            else
+            {
+                porukaGreske2 = "Neispravni podaci.";
+                BojaGreske = "Crvena";
+            }
         }
 
         public void loginKlik(object parameter)

@@ -20,6 +20,7 @@ namespace Bike_Shop_Đir.Model
             set { idDijela = value; }
         }
 
+
         private string nazivProizvodjaca;
         public string NazivProizvodjaca
         {
