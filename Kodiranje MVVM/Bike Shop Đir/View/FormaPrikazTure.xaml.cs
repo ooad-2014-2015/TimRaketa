@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace Bike_Shop_Đir.View
 {
     /// <summary>
-    /// Interaction logic for FormaPrikazDijela.xaml
+    /// Interaction logic for FormaPrikazTure.xaml
     /// </summary>
-    public partial class FormaPrikazDijela : Window
+    public partial class FormaPrikazTure : Window
     {
-        public FormaPrikazDijela()
+        public FormaPrikazTure()
         {
             InitializeComponent();
         }

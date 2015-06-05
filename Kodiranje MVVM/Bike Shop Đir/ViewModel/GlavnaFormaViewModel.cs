@@ -43,13 +43,6 @@ namespace Bike_Shop_Đir.ViewModel
             set { formaOdabirBicikla = value; }
         }
 
-        private OdabirBiciklaViewModel odabirBiciklaViewModel;
-        public OdabirBiciklaViewModel OdabirBiciklaViewModel
-        {
-            get { return odabirBiciklaViewModel; }
-            set { odabirBiciklaViewModel = value; }
-        }
-
         private FormaOdabirTure formaOdabirTure;
         public FormaOdabirTure FormaOdabirTure
         {
@@ -104,6 +97,8 @@ namespace Bike_Shop_Đir.ViewModel
         {
             Zaposlenik = null;
             NoviKlijent = null;
+            zaposlenikLogovan = false;
+            klijentLogovan = false;
             RegistracijaILogovanje = new RelayCommand(registracijaILogovanjeKlik);
             OdabirBicikla = new RelayCommand(odabirBicikla);
             OdabirTure = new RelayCommand(odabirTure);
@@ -129,8 +124,6 @@ namespace Bike_Shop_Đir.ViewModel
         {
             azuriraj();
             formaOdabirBicikla = new FormaOdabirBicikla(zaposlenikLogovan, klijentLogovan);
-            odabirBiciklaViewModel = new OdabirBiciklaViewModel();
-            formaOdabirBicikla.DataContext = odabirBiciklaViewModel;
             formaOdabirBicikla.Show();
         }
 
@@ -138,8 +131,6 @@ namespace Bike_Shop_Đir.ViewModel
         {
             azuriraj();
             formaOdabirTure = new FormaOdabirTure(zaposlenikLogovan, klijentLogovan, this);
-            odabirTureViewModel = new OdabirTureViewModel(this);
-            formaOdabirTure.DataContext = odabirTureViewModel;
             formaOdabirTure.Show();
         }
 

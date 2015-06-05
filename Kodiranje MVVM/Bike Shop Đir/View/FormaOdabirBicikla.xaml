@@ -9,7 +9,7 @@
             <ImageBrush ImageSource="pospok.jpg" Stretch="Uniform"/>
         </Grid.Background>
 
-        <DataGrid HorizontalAlignment="Left" VerticalAlignment="Top" Height="236" Width="313" Margin="32,30,0,0"  DataContext="{Binding Path=Bicikla.BiciklaUPonudi}" ItemsSource="{Binding}" CanUserAddRows="False">
+        <DataGrid x:Name="datagrid1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="236" Width="313" Margin="32,30,0,0"  DataContext="{Binding Path=Bicikla.BiciklaUPonudi}" ItemsSource="{Binding}" CanUserAddRows="False" SelectedCellsChanged="DataGrid_SelectedCellsChanged" IsManipulationEnabled="True">
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="SelectedCellsChanged">
                     <i:InvokeCommandAction Command="{Binding Path=Otvori}"/>
@@ -24,7 +24,7 @@
         </DataGrid>
         <Button x:Name="button1" Content="Dodaj novi" HorizontalAlignment="Left" Margin="225,269,0,0" VerticalAlignment="Top" Width="98" RenderTransformOrigin="1.198,-0.128" Height="25" IsManipulationEnabled="True"/>
         <Label Content="Bicikli u ponudi:" HorizontalAlignment="Left" Margin="10,2,0,0" VerticalAlignment="Top" Width="106"/>
-        <DataGrid HorizontalAlignment="Left" VerticalAlignment="Top" Height="236" Width="313" Margin="350,28,0,0" RenderTransformOrigin="0.948,0.515"  DataContext="{Binding Path=Dijelovi.DijeloviUPonudi}" ItemsSource="{Binding}" CanUserAddRows="False">
+        <DataGrid x:Name="datagrid2" HorizontalAlignment="Left" VerticalAlignment="Top" Height="236" Width="313" Margin="350,28,0,0" RenderTransformOrigin="0.948,0.515"  DataContext="{Binding Path=Dijelovi.DijeloviUPonudi}" ItemsSource="{Binding}" CanUserAddRows="False" IsManipulationEnabled="True" SelectedCellsChanged="DataGrid_SelectedCellsChanged_1" SelectionChanged="datagrid2_SelectionChanged">
             <DataGrid.Background>
                 <SolidColorBrush Color="#FFE8F3EE" Opacity="0.8"/>
             </DataGrid.Background>

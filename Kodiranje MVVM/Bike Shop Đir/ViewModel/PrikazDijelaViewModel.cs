@@ -10,7 +10,7 @@ using Bike_Shop_Đir.View;
 
 namespace Bike_Shop_Đir.ViewModel
 {
-    public class PrikazTureViewModel
+    public class PrikazDijelaViewModel
     {
         private GlavnaFormaViewModel glavna;
         public GlavnaFormaViewModel Glavna
@@ -19,21 +19,21 @@ namespace Bike_Shop_Đir.ViewModel
             set { glavna = value; }
         }
 
-        private Tura tura;
-        public Tura Tura
+        private  DioBicikla dio;
+        public   DioBicikla Dio
         {
-            get { return tura; }
-            set { tura = value; }
+            get { return dio; }
+            set { dio = value; }
         }
 
         public ICommand Kupi { get; set; }
-       
+        public ICommand Brisi { get; set; }
 
-        public PrikazTureViewModel(Tura pTura)
+        public PrikazDijelaViewModel(DioBicikla pDio)
         {
-            tura = pTura;
+            dio = pDio;
             Kupi = new RelayCommand(kupi);
-            
+            Brisi = new RelayCommand(brisi);
         }
 
         public Action CloseAction { get; set; }
@@ -41,6 +41,11 @@ namespace Bike_Shop_Đir.ViewModel
         public void kupi(object parametar)
         {
             CloseAction();
+        }
+
+        public void brisi(object parametar)
+        {
+
         }
     }
 }

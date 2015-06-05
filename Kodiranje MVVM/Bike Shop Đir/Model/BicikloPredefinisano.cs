@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
 
 namespace Bike_Shop_Đir.Model
 {
@@ -13,6 +14,13 @@ namespace Bike_Shop_Đir.Model
         {
             get {return dodatniOpis; }
             set {dodatniOpis = value; }
+        }
+
+        private Image slika;
+        public Image Slika
+        {
+            get { return slika; }
+            set { slika = value; }
         }
 
         private string nazivProizvodjaca; 

@@ -12,7 +12,7 @@
                 <ImageBrush ImageSource="black-and-white-mountain-hi.png" Stretch="Uniform"/>
             </Image.OpacityMask>
         </Image>
-        <DataGrid HorizontalAlignment="Left" Margin="10,10,0,48.421" Width="402">
+        <DataGrid x:Name="datagrid1" HorizontalAlignment="Left" Margin="10,10,0,48.421" Width="402" DataContext="{Binding Path=Ture.TureUPonudi}"  ItemsSource="{Binding}" SelectedCellsChanged="DataGrid_SelectedCellsChanged" IsManipulationEnabled="True">
             <DataGrid.Background>
                 <SolidColorBrush Color="#FFE9F0F1" Opacity="0.8"/>
             </DataGrid.Background>

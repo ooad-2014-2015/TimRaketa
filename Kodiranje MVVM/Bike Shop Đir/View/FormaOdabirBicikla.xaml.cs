@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
+using Bike_Shop_Đir.Model;
+using Bike_Shop_Đir.ViewModel;
+
 
 namespace Bike_Shop_Đir.View
 {
@@ -23,6 +26,13 @@ namespace Bike_Shop_Đir.View
         bool zaposlenik;
         bool klijent;
 
+        private OdabirBiciklaViewModel Ob;
+        public OdabirBiciklaViewModel OB
+        {
+            get { return Ob; }
+            set { Ob = value; }
+        }
+
         public FormaOdabirBicikla(bool pzaposlenik, bool pklijent)
         {
             zaposlenik = pzaposlenik;
@@ -33,6 +43,26 @@ namespace Bike_Shop_Đir.View
                 button2.Visibility = System.Windows.Visibility.Visible;
             }
             InitializeComponent();
+            Ob = new OdabirBiciklaViewModel();
+            DataContext = Ob;
+        }
+
+        private void DataGrid_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
+        {
+            int indeks = datagrid1.SelectedIndex;
+            Ob.otvori(Ob.Bicikla.BiciklaUPonudi[indeks]);
+       
+        }
+
+        private void DataGrid_SelectedCellsChanged_1(object sender, SelectedCellsChangedEventArgs e)
+        {
+            int indeks = datagrid2.SelectedIndex;
+            Ob.otvoriDio(Ob.Dijelovi.DijeloviUPonudi[indeks]);
+        }
+
+        private void datagrid2_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
   
     }

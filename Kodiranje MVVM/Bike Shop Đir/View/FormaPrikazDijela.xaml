@@ -1,32 +1,28 @@
-﻿<Window x:Class="Bike_Shop_Đir.View.FormaPrikazTure"
+﻿<Window x:Class="Bike_Shop_Đir.View.FormaPrikazDijela"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="FormaPrikazTure" Height="364.893" Width="387.234">
+        Title="FormaPrikazDijela" Height="365" Width="383">
     <Grid>
-        <Image HorizontalAlignment="Left" Height="170" Margin="10,10,-74,0" VerticalAlignment="Top" Width="356"/>
-        <Grid Margin="0,0,4,0">
-            <Label Content="Naziv:" HorizontalAlignment="Left" Margin="31,180,0,0" VerticalAlignment="Top" FontSize="18" RenderTransformOrigin="1.593,0.554">
-                <Label.Foreground>
-                    <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HighlightColorKey}}"/>
-                </Label.Foreground>
-            </Label>
-            <Label Content="Cijena:" HorizontalAlignment="Left" Margin="232,180,0,0" VerticalAlignment="Top" FontSize="18">
-                <Label.Foreground>
-                    <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HighlightColorKey}}"/>
-                </Label.Foreground>
-            </Label>
-            <Label Content="Opis:" HorizontalAlignment="Left" Margin="31,204,0,0" VerticalAlignment="Top" FontSize="18">
-                <Label.Foreground>
-                    <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HighlightColorKey}}"/>
-                </Label.Foreground>
-            </Label>
-            <TextBlock HorizontalAlignment="Left" Margin="15,238,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="351" Height="57"><Run Text="{Binding Dio.DodatniOpis}"/><Run Text=""/></TextBlock>
-            <TextBlock HorizontalAlignment="Left" Margin="94,185,0,0" TextWrapping="Wrap" Text="{Binding Dio.IDDijela}" VerticalAlignment="Top" Width="110" Height="21"/>
-            <TextBlock HorizontalAlignment="Left" Margin="300,185,0,0" TextWrapping="Wrap" Text="{Binding Dio.CijenaDijela}" VerticalAlignment="Top" Width="59" Height="21" RenderTransformOrigin="1.054,0.118"/>
-            <Image HorizontalAlignment="Left" Height="170" Margin="10,10,0,0" VerticalAlignment="Top" Width="356"/>
-            <Button x:Name="button2" Content="Kupi" HorizontalAlignment="Left" Margin="271,302,0,0" VerticalAlignment="Top" Width="75" IsManipulationEnabled="True" Command="{Binding Kupi}"/>
-
-        </Grid>
+        <Image HorizontalAlignment="Left" Height="170" Margin="10,10,0,0" VerticalAlignment="Top" Width="356" DataContext="{Binding Path=Dio.SlikaKomponente}"/>
+        <Label Content="Naziv:" HorizontalAlignment="Left" Margin="10,185,0,0" VerticalAlignment="Top" FontSize="18" RenderTransformOrigin="0.776,1.088">
+            <Label.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HighlightColorKey}}"/>
+            </Label.Foreground>
+        </Label>
+        <Label Content="Cijena:" HorizontalAlignment="Left" Margin="219,185,0,0" VerticalAlignment="Top" FontSize="18">
+            <Label.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HighlightColorKey}}"/>
+            </Label.Foreground>
+        </Label>
+        <Label Content="Opis:" HorizontalAlignment="Left" Margin="10,208,0,0" VerticalAlignment="Top" FontSize="18">
+            <Label.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.HighlightColorKey}}"/>
+            </Label.Foreground>
+        </Label>
+        <TextBlock HorizontalAlignment="Left" Margin="73,195,0,0" TextWrapping="Wrap" Text="{Binding Dio.IDDijela}" VerticalAlignment="Top" Width="110" Height="21"/>
+        <TextBlock HorizontalAlignment="Left" Margin="287,195,0,0" TextWrapping="Wrap" Text="{Binding Dio.CijenaDijela}" VerticalAlignment="Top" Width="59" Height="21"/>
+        <TextBlock HorizontalAlignment="Left" Margin="15,242,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="351" Height="57"><Run Text="{Binding Dio.DodatniOpis}"/><Run Text=""/></TextBlock>
+        <Button x:Name="button2" Content="Kupi" HorizontalAlignment="Left" Margin="287,304,0,0" VerticalAlignment="Top" Width="75" IsManipulationEnabled="True" Command="{Binding Kupi}"/>
 
     </Grid>
 </Window>

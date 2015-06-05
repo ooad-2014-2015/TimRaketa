@@ -19,11 +19,19 @@ namespace Bike_Shop_Đir.ViewModel
             set { glavna = value; }
         }
 
+        private BicikloPredefinisano bajk;
+        public BicikloPredefinisano Bajk
+        {
+            get { return bajk; }
+            set { bajk = value; }
+        }
+
         public ICommand Kupi { get; set; }
         public ICommand Brisi { get; set; }
 
-        public PrikazItemaViewModel()
+        public PrikazItemaViewModel(BicikloPredefinisano pBajk)
         {
+            bajk = pBajk;
             Kupi = new RelayCommand(kupi);
             Brisi = new RelayCommand(brisi);
         }
