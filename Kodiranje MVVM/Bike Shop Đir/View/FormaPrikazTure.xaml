@@ -22,6 +22,7 @@
         <TextBlock HorizontalAlignment="Left" Margin="73,195,0,0" TextWrapping="Wrap" Text="{Binding Tura.IDTure}" VerticalAlignment="Top" Width="110" Height="21"/>
         <TextBlock HorizontalAlignment="Left" Margin="295,195,0,0" TextWrapping="Wrap" Text="{Binding Tura.Trajanje}" VerticalAlignment="Top" Width="59" Height="21"/>
         <TextBlock HorizontalAlignment="Left" Margin="94,219,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="65" Height="17" RenderTransformOrigin="-0.477,-0.704"><Run Text="{Binding Tura.Trajanje}"/><Run Text=""/></TextBlock>
+        <Button Content="Naruci se" HorizontalAlignment="Left" Margin="279,315,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="-0.133,-0.25" Command="{Binding Path=Kupi}"/>
 
     </Grid>
 </Window>
