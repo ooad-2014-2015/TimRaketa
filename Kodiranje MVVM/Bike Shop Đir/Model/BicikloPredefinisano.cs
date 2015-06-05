@@ -20,7 +20,7 @@ namespace Bike_Shop_Đir.Model
         public Image Slika
         {
             get { return slika; }
-            set { slika = value; }
+            set { slika = value; OnPropertyChanged("Slika"); }
         }
 
         private string nazivProizvodjaca; 

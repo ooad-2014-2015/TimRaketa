@@ -8,12 +8,14 @@ using System.Windows.Input;
 using System.Drawing;
 using System.Windows.Forms;
 using Bike_Shop_Đir.Model;
+using System.Windows.Media;
 
 namespace Bike_Shop_Đir.ViewModel
 {
     public class DodavanjeBiciklaViewModel : INotifyPropertyChanged
     {
         public ICommand KlikDugme { get; set; }
+        public ICommand DodajBiciklo { get; set; }
 
         private Image slika;
         public Image Slika
@@ -30,11 +32,28 @@ namespace Bike_Shop_Đir.ViewModel
             set { novoBiciklo = value; }
         }
 
+        private string tekstPoruke;
+
+        public string TekstPoruke
+        {
+            get { return tekstPoruke; }
+            set { tekstPoruke = value; OnPropertyChanged("TekstPoruke"); }
+        }
+        
+
+
+
         public DodavanjeBiciklaViewModel()
         {
             NovoBiciklo = new BicikloPredefinisano();
             KlikDugme = new RelayCommand(klikDugme);
+            DodajBiciklo = new RelayCommand(dodajBiciklo);
 
+        }
+
+        public void dodajBiciklo(object parameter)
+        {
+            TekstPoruke = "Žao nam je, trenutno nije moguće dodati novo biciklo.";
         }
 
         public void klikDugme(object parameter)
@@ -43,8 +62,7 @@ namespace Bike_Shop_Đir.ViewModel
             open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp)|*.jpg; *.jpeg; *.gif; *.bmp";
             if (open.ShowDialog() == DialogResult.OK)
             {
-                NovoBiciklo.Slika = new Bitmap(open.FileName);
-
+                NovoBiciklo.Slika = Image.FromFile(open.FileName);
             }
 
         }

@@ -10,6 +10,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Bike_Shop_Đir.Model;
 using Bike_Shop_Đir.View;
+using System.Windows;
 
 namespace Bike_Shop_Đir.ViewModel
 {
@@ -67,6 +68,8 @@ namespace Bike_Shop_Đir.ViewModel
 
         public ICommand Otvori { get; set; }
 
+        public ICommand DodajNovoBiciklo { get; set; }
+
         public OdabirBiciklaViewModel()
         {
             bicikla = new KatalogBicikala();
@@ -75,6 +78,7 @@ namespace Bike_Shop_Đir.ViewModel
             napuni();
             povuciIzBazeBicikla();
             povuciIzBazeDijelove();
+            DodajNovoBiciklo = new RelayCommand(dodajNovoBiciklo);
         }
 
         //ova će funkcija biti obrisana kad se povežemo sa bazom, sada služi samo za simulaciju rada
@@ -151,6 +155,13 @@ namespace Bike_Shop_Đir.ViewModel
         public void povuciIzBazeDijelove()
         {
             //ovdje ćemo u instancukataloga povući dijelove
+        }
+
+
+        public void dodajNovoBiciklo(object parameter)
+        {
+            FormaDodavanjeBicikla f = new FormaDodavanjeBicikla();
+            f.Visibility = Visibility.Visible;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

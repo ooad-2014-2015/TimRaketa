@@ -22,7 +22,8 @@
                 <DataGridTextColumn Header="Bicikl" Width="200" Binding="{Binding Path=IDBicikla}" IsReadOnly="True" />
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="button1" Content="Dodaj novi" HorizontalAlignment="Left" Margin="225,269,0,0" VerticalAlignment="Top" Width="98" RenderTransformOrigin="1.198,-0.128" Height="25" IsManipulationEnabled="True"/>
+        <Button x:Name="button1" Content="Dodaj novi" HorizontalAlignment="Left" Margin="225,269,0,0" VerticalAlignment="Top" Width="98" RenderTransformOrigin="1.198,-0.128" Height="25" IsManipulationEnabled="True"
+                Command="{Binding DodajNovoBiciklo}"/>
         <Label Content="Bicikli u ponudi:" HorizontalAlignment="Left" Margin="10,2,0,0" VerticalAlignment="Top" Width="106"/>
         <DataGrid x:Name="datagrid2" HorizontalAlignment="Left" VerticalAlignment="Top" Height="236" Width="313" Margin="350,28,0,0" RenderTransformOrigin="0.948,0.515"  DataContext="{Binding Path=Dijelovi.DijeloviUPonudi}" ItemsSource="{Binding}" CanUserAddRows="False" IsManipulationEnabled="True" SelectedCellsChanged="DataGrid_SelectedCellsChanged_1" SelectionChanged="datagrid2_SelectionChanged">
             <DataGrid.Background>
