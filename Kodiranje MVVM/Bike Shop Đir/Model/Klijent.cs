@@ -32,7 +32,7 @@ namespace Bike_Shop_Đir.Model
         public int BrojKartice
         {
             get { return brojKartice; }
-            set { brojKartice = value; }
+            set { brojKartice = value; OnPropertyChanged("BrojKartice"); }
         }
 
         public Klijent()
@@ -104,12 +104,12 @@ namespace Bike_Shop_Đir.Model
             //Prvo gleda jel vrijednost uopste poputnjena
             if (String.IsNullOrWhiteSpace(Prezime))
             {
-                return "Ime mora biti uneseno!";
+                return "Prezime mora biti uneseno!";
             }
 
             if (Prezime.Length < 2)
             {
-                return "Ime prekratko";
+                return "Prezime prekratko";
             }
             return null;
         }
@@ -120,7 +120,7 @@ namespace Bike_Shop_Đir.Model
             {
                 return "Broj kreditne kartice mora biti unesen!";
             }
-            if (BrojKartice.ToString().Length > 19 || BrojKartice.ToString().Length < 11)
+            if (BrojKartice.ToString().Length < 8 || BrojKartice.ToString().Length > 10)
             {
                 return "Broj kreditne kartice ne postoji!";
             }

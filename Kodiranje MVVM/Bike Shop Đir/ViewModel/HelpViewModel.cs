@@ -21,7 +21,7 @@ namespace Bike_Shop_Đir.View
         
         public HelpViewModel(DocumentViewer d)
         {
-            Xps = new XpsDocument(@"D:\FAKS\OOAD\GIT\TimRaketa\Kodiranje MVVM\Bike Shop Đir\HELP.xps", System.IO.FileAccess.Read);
+            Xps = new XpsDocument(@"HELP.xps", System.IO.FileAccess.Read);
             d.Document = Xps.GetFixedDocumentSequence();
         }
 

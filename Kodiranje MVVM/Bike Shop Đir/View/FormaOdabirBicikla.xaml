@@ -10,11 +10,7 @@
         </Grid.Background>
 
         <DataGrid HorizontalAlignment="Left" VerticalAlignment="Top" Height="236" Width="313" Margin="32,30,0,0"  DataContext="{Binding Path=Bicikla.BiciklaUPonudi}" ItemsSource="{Binding}" CanUserAddRows="False">
-            <i:Interaction.Triggers>
-                <i:EventTrigger EventName="SelectedCellsChanged">
-                    <i:InvokeCommandAction Command="{Binding Path=Otvori}"/>
-                </i:EventTrigger>
-            </i:Interaction.Triggers>
+           
             <DataGrid.Background>
                 <SolidColorBrush Color="#FFE8F3EE" Opacity="0.8"/>
             </DataGrid.Background>

@@ -97,7 +97,7 @@ namespace Bike_Shop_Đir.ViewModel
 
         }
 
-        public void otvori(object parametar)
+        public void otvori(object parameter)
         {
             formaPrikazItema = new FormaPrikazItema(Parent.ZaposlenikLogovan, Parent.KlijentLogovan);
             prikazItemaViewModel = new PrikazItemaViewModel();
